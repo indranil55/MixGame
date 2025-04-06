@@ -1,173 +1,157 @@
-/* styles.css */
 body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
-  background: #f9f9f9;
+  padding: 0;
+  background: #f7f7f7;
   color: #333;
 }
 
 header {
-  background: #262626;
+  background: #222;
   color: #fff;
-  padding: 1rem;
+  padding: 10px 20px;
   text-align: center;
 }
 
 .logo {
-  font-size: 1.8rem;
-  font-weight: bold;
+  font-size: 24px;
+  font-weight: 700;
 }
 
 .tagline {
-  font-size: 1rem;
-  color: #ccc;
-  margin: 0.2rem 0 1rem;
+  font-size: 14px;
+  margin-top: 5px;
+  color: #aaa;
 }
 
 nav ul {
+  display: flex;
+  justify-content: center;
   list-style: none;
   padding: 0;
-  margin: 1rem 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.8rem;
+}
+
+nav ul li {
+  margin: 0 10px;
 }
 
 nav ul li a {
   color: #fff;
   text-decoration: none;
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
-  background: #444;
-}
-
-nav ul li a.active,
-nav ul li a:hover {
-  background: #f39c12;
-  color: #000;
+  font-weight: 600;
 }
 
 .hero {
+  background: linear-gradient(to right, #ff6e7f, #bfe9ff);
+  padding: 40px 20px;
   text-align: center;
-  padding: 2rem 1rem;
-  background: linear-gradient(to right, #ff9a9e, #fad0c4);
 }
 
-.game-categories {
-  padding: 1rem;
-  text-align: center;
+.category-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
 }
 
 .category-buttons button {
-  background: #eee;
+  margin: 5px;
+  padding: 10px 20px;
   border: none;
-  margin: 0.4rem;
-  padding: 0.6rem 1rem;
-  border-radius: 20px;
-  font-weight: bold;
+  border-radius: 25px;
+  background-color: #333;
+  color: #fff;
   cursor: pointer;
 }
 
-.category-buttons .active {
-  background: #f39c12;
-  color: #fff;
-}
-
 .games-container {
-  padding: 1rem;
-  max-width: 1200px;
-  margin: auto;
+  padding: 20px;
+  text-align: center;
 }
 
 .games-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
 }
 
 .game-card {
   background: #fff;
-  border-radius: 12px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: transform 0.3s;
+  transition: transform 0.2s;
 }
 
 .game-card:hover {
-  transform: translateY(-5px);
+  transform: scale(1.05);
 }
 
 .game-card img {
   width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
+  height: auto;
+  display: block;
+  border-bottom: 1px solid #eee;
 }
 
-.game-title {
-  padding: 0.8rem;
-  text-align: center;
-  font-weight: bold;
-}
-
-.loading,
-.load-more {
-  text-align: center;
-  margin: 1rem auto;
+.game-card h3 {
+  margin: 10px;
+  font-size: 16px;
 }
 
 .load-more {
-  padding: 0.6rem 1.2rem;
-  border: none;
-  background: #f39c12;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #333;
   color: #fff;
+  border: none;
   border-radius: 8px;
-  font-weight: bold;
   cursor: pointer;
 }
 
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #262626;
-  color: #aaa;
+.loading {
+  margin-top: 10px;
+  display: none;
 }
 
 .game-modal {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.85);
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.7);
   display: none;
-  align-items: center;
   justify-content: center;
-  z-index: 999;
+  align-items: center;
 }
 
 .modal-content {
-  position: relative;
+  background: #fff;
   width: 90%;
-  max-width: 800px;
   height: 80%;
-  background: #000;
-  border-radius: 10px;
-  overflow: hidden;
+  position: relative;
 }
 
 .modal-content iframe {
   width: 100%;
   height: 100%;
-  border: none;
 }
 
 .close-modal {
   position: absolute;
   top: 10px;
-  right: 15px;
-  font-size: 2rem;
-  color: #fff;
+  right: 20px;
+  font-size: 30px;
   cursor: pointer;
+  color: #000;
+}
+
+@media (max-width: 600px) {
+  .games-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
 }
