@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MixGame</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">IndGameList</div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Puzzle</a></li>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">Adventure</a></li>
+            </ul>
+        </nav>
+        <div class="search-box">
+            <input type="text" placeholder="Search games...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Play Free HTML5 Games</h1>
+            <p>No downloads required, Play instantly in your Mobile Browser!</p>
+        </section>
+
+        <section class="game-categories">
+            <h2>Popular Categories</h2>
+            <div class="category-buttons">
+                <button class="active">All Games</button>
+                <button>Action</button>
+                <button>Puzzle</button>
+                <button>Adventure</button>
+                <button>Sports</button>
+                <button>Racing</button>
+            </div>
+        </section>
+
+        <section class="games-container">
+            <div class="games-grid" id="games-grid">
+                <!-- Games will be loaded here by JavaScript -->
+            </div>
+            <div class="loading" id="loading">Loading games...</div>
+            <button class="load-more" id="load-more">Load More Games</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 IndGameList, All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Contact Us</a>
+        </div>
+    </footer>
+
+    <div class="game-modal" id="game-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <iframe id="game-frame" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <!-- Font Awesome for icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- Main JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
