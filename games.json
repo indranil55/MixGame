@@ -11,13 +11,41 @@
     "url": "https://games.indranil.fun/temple-run/index.html",
     "thumbnail": "https://games.indranil.fun/temple-run/thumb.webp",
     "category": "Adventure",
-    "top": false
+    "top": true
   },
   {
     "title": "Angry Birds",
     "url": "https://games.indranil.fun/angry-birds/index.html",
     "thumbnail": "https://games.indranil.fun/angry-birds/thumb.webp",
     "category": "Puzzle",
+    "top": true
+  },
+  {
+    "title": "Cut the Rope",
+    "url": "https://games.indranil.fun/cut-the-rope/index.html",
+    "thumbnail": "https://games.indranil.fun/cut-the-rope/thumb.webp",
+    "category": "Puzzle",
+    "top": true
+  },
+  {
+    "title": "Stack Bump 3D",
+    "url": "https://games.indranil.fun/stack-bump-3d/index.html",
+    "thumbnail": "https://games.indranil.fun/stack-bump-3d/thumb.webp",
+    "category": "Arcade",
+    "top": true
+  },
+  {
+    "title": "2048",
+    "url": "https://games.indranil.fun/2048/index.html",
+    "thumbnail": "https://games.indranil.fun/2048/thumb.webp",
+    "category": "Puzzle",
+    "top": true
+  },
+  {
+    "title": "Flappy Bird",
+    "url": "https://games.indranil.fun/flappy-bird/index.html",
+    "thumbnail": "https://games.indranil.fun/flappy-bird/thumb.webp",
+    "category": "Arcade",
     "top": true
   },
   {
@@ -28,33 +56,20 @@
     "top": true
   },
   {
-    "title": "Cut The Rope",
-    "url": "https://games.indranil.fun/cut-the-rope/index.html",
-    "thumbnail": "https://games.indranil.fun/cut-the-rope/thumb.webp",
-    "category": "Puzzle",
-    "top": false
-  },
-  {
     "title": "Slope",
     "url": "https://games.indranil.fun/slope/index.html",
     "thumbnail": "https://games.indranil.fun/slope/thumb.webp",
-    "category": "Action",
+    "category": "Racing",
     "top": true
   },
   {
-    "title": "Basketball Stars",
-    "url": "https://games.indranil.fun/basketball-stars/index.html",
-    "thumbnail": "https://games.indranil.fun/basketball-stars/thumb.webp",
-    "category": "Sports",
-    "top": false
+    "title": "Geometry Dash",
+    "url": "https://games.indranil.fun/geometry-dash/index.html",
+    "thumbnail": "https://games.indranil.fun/geometry-dash/thumb.webp",
+    "category": "Arcade",
+    "top": true
   },
-  {
-    "title": "Snail Bob",
-    "url": "https://games.indranil.fun/snail-bob/index.html",
-    "thumbnail": "https://games.indranil.fun/snail-bob/thumb.webp",
-    "category": "Puzzle",
-    "top": false
-  },
+
   {
     "title": "Fireboy and Watergirl",
     "url": "https://games.indranil.fun/fireboy-watergirl/index.html",
@@ -63,69 +78,69 @@
     "top": true
   },
   {
-    "title": "3D Car Simulator",
-    "url": "https://games.indranil.fun/3d-car-simulator/index.html",
-    "thumbnail": "https://games.indranil.fun/3d-car-simulator/thumb.webp",
-    "category": "Racing",
-    "top": false
-  },
-  {
-    "title": "Tic Tac Toe",
-    "url": "https://games.indranil.fun/tic-tac-toe/index.html",
-    "thumbnail": "https://games.indranil.fun/tic-tac-toe/thumb.webp",
-    "category": "Puzzle",
-    "top": false
-  },
-  {
-    "title": "Super Mario",
-    "url": "https://games.indranil.fun/super-mario/index.html",
-    "thumbnail": "https://games.indranil.fun/super-mario/thumb.webp",
-    "category": "Adventure",
-    "top": true
-  },
-  {
-    "title": "2048",
-    "url": "https://games.indranil.fun/2048/index.html",
-    "thumbnail": "https://games.indranil.fun/2048/thumb.webp",
-    "category": "Puzzle",
-    "top": false
-  },
-  {
-    "title": "Helix Jump",
-    "url": "https://games.indranil.fun/helix-jump/index.html",
-    "thumbnail": "https://games.indranil.fun/helix-jump/thumb.webp",
-    "category": "Arcade",
-    "top": true
-  },
-  {
-    "title": "Stack Ball",
-    "url": "https://games.indranil.fun/stack-ball/index.html",
-    "thumbnail": "https://games.indranil.fun/stack-ball/thumb.webp",
-    "category": "Arcade",
-    "top": false
-  },
-
-  // বাকিগুলো একই স্টাইল ফলো করে — মোট ৫০টি এভাবে থাকছে
-
-  {
-    "title": "ZigZag",
-    "url": "https://games.indranil.fun/zigzag/index.html",
-    "thumbnail": "https://games.indranil.fun/zigzag/thumb.webp",
-    "category": "Arcade",
-    "top": false
-  },
-  {
-    "title": "Soccer Skills",
-    "url": "https://games.indranil.fun/soccer-skills/index.html",
-    "thumbnail": "https://games.indranil.fun/soccer-skills/thumb.webp",
-    "category": "Sports",
-    "top": false
-  },
-  {
-    "title": "Pacman",
-    "url": "https://games.indranil.fun/pacman/index.html",
-    "thumbnail": "https://games.indranil.fun/pacman/thumb.webp",
+    "title": "Tetris",
+    "url": "https://games.indranil.fun/tetris/index.html",
+    "thumbnail": "https://games.indranil.fun/tetris/thumb.webp",
     "category": "Classic",
     "top": true
+  },
+  {
+    "title": "Basketball Stars",
+    "url": "https://games.indranil.fun/basketball-stars/index.html",
+    "thumbnail": "https://games.indranil.fun/basketball-stars/thumb.webp",
+    "category": "Sports",
+    "top": true
+  },
+  {
+    "title": "Penalty Shooters 2",
+    "url": "https://games.indranil.fun/penalty-shooters-2/index.html",
+    "thumbnail": "https://games.indranil.fun/penalty-shooters-2/thumb.webp",
+    "category": "Sports",
+    "top": true
+  },
+  {
+    "title": "Snail Bob",
+    "url": "https://games.indranil.fun/snail-bob/index.html",
+    "thumbnail": "https://games.indranil.fun/snail-bob/thumb.webp",
+    "category": "Puzzle",
+    "top": true
+  },
+  {
+    "title": "Stickman Hook",
+    "url": "https://games.indranil.fun/stickman-hook/index.html",
+    "thumbnail": "https://games.indranil.fun/stickman-hook/thumb.webp",
+    "category": "Arcade",
+    "top": true
+  },
+  {
+    "title": "Crossy Road",
+    "url": "https://games.indranil.fun/crossy-road/index.html",
+    "thumbnail": "https://games.indranil.fun/crossy-road/thumb.webp",
+    "category": "Arcade",
+    "top": true
+  },
+  {
+    "title": "Zombie Tsunami",
+    "url": "https://games.indranil.fun/zombie-tsunami/index.html",
+    "thumbnail": "https://games.indranil.fun/zombie-tsunami/thumb.webp",
+    "category": "Action",
+    "top": true
+  },
+  {
+    "title": "Fruit Ninja",
+    "url": "https://games.indranil.fun/fruit-ninja/index.html",
+    "thumbnail": "https://games.indranil.fun/fruit-ninja/thumb.webp",
+    "category": "Arcade",
+    "top": true
+  },
+  {
+    "title": "Stick War",
+    "url": "https://games.indranil.fun/stick-war/index.html",
+    "thumbnail": "https://games.indranil.fun/stick-war/thumb.webp",
+    "category": "Strategy",
+    "top": true
   }
+
+  // আরও ২০টা গেম আমি তৈরি করে দেব, চাইলে এখনি পরের অংশ দিই?
 ]
+
