@@ -1,32 +1,27 @@
 [
-    {
-        "title": "Stickman Hook",
-        "thumbnail": "images/stickman-hook.webp",
-        "url": "https://games.indranil.fun/stickman-hook/index.html",
-        "category": "Action"
-    },
-    {
-        "title": "Moto X3M",
-        "thumbnail": "images/moto-x3m.webp",
-        "url": "https://games.indranil.fun/moto-x3m/index.html",
-        "category": "Racing"
-    },
-    {
-        "title": "Temple Run 2",
-        "thumbnail": "images/temple-run-2.webp",
-        "url": "https://games.indranil.fun/temple-run-2/index.html",
-        "category": "Adventure"
-    },
-    {
-        "title": "Basketball Stars",
-        "thumbnail": "images/basketball-stars.webp",
-        "url": "https://games.indranil.fun/basketball-stars/index.html",
-        "category": "Sports"
-    },
-    {
-        "title": "2048",
-        "thumbnail": "images/2048.webp",
-        "url": "https://games.indranil.fun/2048/index.html",
-        "category": "Puzzle"
-    }
+  {
+    "title": "Moto X3M",
+    "url": "https://games.indranil.fun/moto-x3m/index.html",
+    "thumbnail": "https://games.indranil.fun/thumbnails/moto-x3m.webp"
+  },
+  {
+    "title": "Cut the Rope",
+    "url": "https://games.indranil.fun/cut-the-rope/index.html",
+    "thumbnail": "https://games.indranil.fun/thumbnails/cut-the-rope.webp"
+  },
+  {
+    "title": "Temple Run",
+    "url": "https://games.indranil.fun/temple-run/index.html",
+    "thumbnail": "https://games.indranil.fun/thumbnails/temple-run.webp"
+  },
+  {
+    "title": "Slope",
+    "url": "https://games.indranil.fun/slope/index.html",
+    "thumbnail": "https://games.indranil.fun/thumbnails/slope.webp"
+  },
+  {
+    "title": "Stack Ball",
+    "url": "https://games.indranil.fun/stack-ball/index.html",
+    "thumbnail": "https://games.indranil.fun/thumbnails/stack-ball.webp"
+  }
 ]
