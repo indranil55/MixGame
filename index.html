@@ -10,19 +10,19 @@
   <header>
     <h1>🎮 MixGameZone</h1>
     <p class="tagline">Play Instantly – No Download Needed!</p>
-    <input type="text" id="searchBar" placeholder="🔍 Search games..." />
-    <div id="categoryFilter">
-      <button data-category="All">All</button>
-      <button data-category="Action">Action</button>
-      <button data-category="Racing">Racing</button>
-      <button data-category="Brain">Brain</button>
-      <button data-category="Shooting">Shooting</button>
-      <button data-category="Kids">Kids</button>
-      <button data-category="Strategy">Strategy</button>
-      <button data-category="Puzzle">Puzzle</button>
-      <button data-category="Sports">Sports</button>
-      <button data-category="Adventure">Adventure</button>
-    </div>
+    <input type="text" id="searchInput" placeholder="🔍 Search games..." />
+    <select id="categoryFilter">
+      <option value="All">All</option>
+      <option value="Action">Action</option>
+      <option value="Racing">Racing</option>
+      <option value="Brain">Brain</option>
+      <option value="Shooting">Shooting</option>
+      <option value="Kids">Kids</option>
+      <option value="Strategy">Strategy</option>
+      <option value="Puzzle">Puzzle</option>
+      <option value="Sports">Sports</option>
+      <option value="Adventure">Adventure</option>
+    </select>
   </header>
 
   <main>
@@ -33,17 +33,18 @@
 
     <section id="all-games">
       <h2>🎮 All Games</h2>
-      <div class="games-grid" id="games-grid"></div>
+      <div class="games-grid" id="gameContainer"></div>
       <div id="loading">Loading more games...</div>
     </section>
   </main>
 
+  <!-- Game Modal -->
   <div id="gameModal" class="modal">
-  <div class="modal-content">
-    <span id="modalClose" class="close">&times;</span>
-    <iframe id="gameFrame" frameborder="0" allowfullscreen></iframe>
+    <div class="modal-content">
+      <span id="modalClose" class="close">&times;</span>
+      <iframe id="gameFrame" frameborder="0" allowfullscreen></iframe>
+    </div>
   </div>
-</div>
 
   <footer>
     <p>© 2025 MixGameZone – All rights reserved.</p>
