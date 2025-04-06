@@ -1,106 +1,91 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const gameContainer = document.getElementById("game-container");
-  const categoryFilter = document.getElementById("category-filter");
-  const searchInput = document.getElementById("search-input");
-  const topGamesSection = document.getElementById("top-games");
-  const modal = document.getElementById("game-modal");
-  const modalContent = document.getElementById("modal-content");
-  const closeModal = document.getElementById("close-modal");
-  const loader = document.getElementById("loader");
+  const gameContainer = document.getElementById("gameContainer");
+  const categoryFilter = document.getElementById("categoryFilter");
+  const searchInput = document.getElementById("searchInput");
+  const topGamesSection = document.getElementById("topGames");
+  const modal = document.getElementById("gameModal");
+  const modalFrame = document.getElementById("gameFrame");
+  const modalClose = document.getElementById("modalClose");
 
-  let allGames = [];
-  let loadedCount = 0;
-  const loadStep = 20;
+  let gamesData = [];
 
   fetch("games.json")
     .then((res) => res.json())
-    .then((games) => {
-      allGames = games;
-      populateCategories(games);
-      renderTopGames(games);
-      renderGames();
+    .then((data) => {
+      gamesData = data;
+      renderCategories(data);
+      renderGames(data);
+      renderTopGames(data);
     });
 
-  function renderGames(filter = "", category = "") {
-    loader.style.display = "block";
-    const filtered = allGames.filter((game) => {
-      const matchTitle = game.title.toLowerCase().includes(filter.toLowerCase());
-      const matchCategory = category ? game.category === category : true;
-      return matchTitle && matchCategory;
-    });
+  function renderCategories(data) {
+    const categories = [...new Set(data.map((game) => game.category))];
+    categories.sort();
+    categories.unshift("All");
 
-    const toRender = filtered.slice(loadedCount, loadedCount + loadStep);
-    toRender.forEach((game) => {
-      const card = createGameCard(game);
+    categories.forEach((category) => {
+      const option = document.createElement("option");
+      option.value = category;
+      option.textContent = category;
+      categoryFilter.appendChild(option);
+    });
+  }
+
+  function renderGames(data) {
+    gameContainer.innerHTML = "";
+    data.forEach((game) => {
+      const card = document.createElement("div");
+      card.className = "game-card";
+      card.innerHTML = `
+        <img src="${game.thumbnail}" alt="${game.title}" loading="lazy" />
+        <h3>${game.title}</h3>
+      `;
+      card.addEventListener("click", () => {
+        modalFrame.src = game.url;
+        modal.classList.add("active");
+      });
       gameContainer.appendChild(card);
     });
-    loadedCount += loadStep;
-    loader.style.display = "none";
   }
 
-  function createGameCard(game) {
-    const div = document.createElement("div");
-    div.className = "game-card";
-    div.innerHTML = `
-      <img src="${game.thumbnail}" alt="${game.title}" loading="lazy">
-      <div class="game-title">${game.title}</div>
-    `;
-    div.addEventListener("click", () => openGameModal(game));
-    return div;
-  }
-
-  function populateCategories(games) {
-    const categories = [
-      ...new Set(games.map((game) => game.category))
-    ];
-    categories.sort();
-    categories.forEach((cat) => {
-      const btn = document.createElement("button");
-      btn.textContent = cat;
-      btn.className = "filter-button";
-      btn.addEventListener("click", () => {
-        gameContainer.innerHTML = "";
-        loadedCount = 0;
-        renderGames(searchInput.value, cat);
+  function renderTopGames(data) {
+    const topGames = data.filter((game) => game.top);
+    topGames.forEach((game) => {
+      const card = document.createElement("div");
+      card.className = "game-card";
+      card.innerHTML = `
+        <img src="${game.thumbnail}" alt="${game.title}" loading="lazy" />
+        <h3>${game.title}</h3>
+      `;
+      card.addEventListener("click", () => {
+        modalFrame.src = game.url;
+        modal.classList.add("active");
       });
-      categoryFilter.appendChild(btn);
+      topGamesSection.appendChild(card);
     });
   }
 
-  function renderTopGames(games) {
-    const top = games.filter((g) => g.top);
-    top.slice(0, 6).forEach((game) => {
-      const div = createGameCard(game);
-      topGamesSection.appendChild(div);
-    });
-  }
-
-  function openGameModal(game) {
-    modal.style.display = "flex";
-    modalContent.innerHTML = `
-      <iframe src="${game.url}" frameborder="0" allowfullscreen></iframe>
-    `;
-  }
-
-  closeModal.addEventListener("click", () => {
-    modal.style.display = "none";
-    modalContent.innerHTML = "";
+  categoryFilter.addEventListener("change", () => {
+    const value = categoryFilter.value;
+    const filtered = value === "All" ? gamesData : gamesData.filter((g) => g.category === value);
+    renderGames(filtered);
   });
-
-  window.addEventListener("scroll", () => {
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 200) {
-      renderGames(searchInput.value, getActiveCategory());
-    }
-  });
-
-  function getActiveCategory() {
-    const active = document.querySelector(".filter-button.active");
-    return active ? active.textContent : "";
-  }
 
   searchInput.addEventListener("input", () => {
-    gameContainer.innerHTML = "";
-    loadedCount = 0;
-    renderGames(searchInput.value, getActiveCategory());
+    const value = searchInput.value.toLowerCase();
+    const filtered = gamesData.filter((g) => g.title.toLowerCase().includes(value));
+    renderGames(filtered);
+  });
+
+  modalClose.addEventListener("click", () => {
+    modal.classList.remove("active");
+    modalFrame.src = "";
+  });
+
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.classList.remove("active");
+      modalFrame.src = "";
+    }
   });
 });
