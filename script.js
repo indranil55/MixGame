@@ -1,53 +1,67 @@
 const games = [
   {
     title: "Zombie Hunter",
-    thumbnail: "https://www.gamepix.com/assets/img/zombie-hunter.jpg",
-    url: "https://www.gamepix.com/play/zombie-hunter"
+    thumbnail: "https://games-assets.crazygames.com/zombie-hunter/thumb-512x384.webp",
+    url: "https://games.crazygames.com/en_US/zombie-hunter/index.html"
   },
   {
-    title: "Candy Crush Saga",
-    thumbnail: "https://www.gamepix.com/assets/img/candy-crush.jpg",
-    url: "https://www.gamepix.com/play/candy-crush"
+    title: "Temple Run 2",
+    thumbnail: "https://games-assets.crazygames.com/temple-run-2/thumb-512x384.webp",
+    url: "https://games.crazygames.com/en_US/temple-run-2/index.html"
   },
   {
-    title: "Car Racing",
-    thumbnail: "https://www.gamepix.com/assets/img/car-racing.jpg",
-    url: "https://www.gamepix.com/play/car-racing"
+    title: "Moto X3M",
+    thumbnail: "https://games-assets.crazygames.com/moto-x3m/thumb-512x384.webp",
+    url: "https://games.crazygames.com/en_US/moto-x3m/index.html"
+  },
+  {
+    title: "Stacky Bird",
+    thumbnail: "https://games-assets.crazygames.com/stacky-bird/thumb-512x384.webp",
+    url: "https://games.crazygames.com/en_US/stacky-bird/index.html"
+  },
+  {
+    title: "Basketball Stars",
+    thumbnail: "https://games-assets.crazygames.com/basketball-stars/thumb-512x384.webp",
+    url: "https://games.crazygames.com/en_US/basketball-stars/index.html"
   }
 ];
-const gamesGrid = document.getElementById("games-grid");
-const modal = document.getElementById("game-modal");
-const iframe = document.getElementById("game-frame");
+
+const gameGrid = document.getElementById("games-grid");
+const loading = document.getElementById("loading");
+const gameModal = document.getElementById("game-modal");
+const gameFrame = document.getElementById("game-frame");
 const closeModal = document.querySelector(".close-modal");
 
 function loadGames() {
+  loading.style.display = "none";
   games.forEach(game => {
-    const card = document.createElement("div");
-    card.classList.add("game-card");
-    card.innerHTML = `
+    const gameCard = document.createElement("div");
+    gameCard.classList.add("game-card");
+
+    gameCard.innerHTML = `
       <img src="${game.thumbnail}" alt="${game.title}">
-      <div class="overlay">▶ Tap to Play</div>
-      <h3>${game.title}</h3>
+      <h4>${game.title}</h4>
     `;
-    card.addEventListener("click", () => {
-      iframe.src = game.url;
-      modal.style.display = "flex";
+
+    gameCard.addEventListener("click", () => {
+      gameFrame.src = game.url;
+      gameModal.style.display = "flex";
     });
-    gamesGrid.appendChild(card);
+
+    gameGrid.appendChild(gameCard);
   });
-  document.getElementById("loading").style.display = "none";
 }
 
 closeModal.addEventListener("click", () => {
-  modal.style.display = "none";
-  iframe.src = "";
+  gameModal.style.display = "none";
+  gameFrame.src = "";
 });
 
-window.addEventListener("click", e => {
-  if (e.target === modal) {
-    modal.style.display = "none";
-    iframe.src = "";
+window.addEventListener("click", (e) => {
+  if (e.target === gameModal) {
+    gameModal.style.display = "none";
+    gameFrame.src = "";
   }
 });
 
-window.addEventListener("DOMContentLoaded", loadGames);
+window.onload = loadGames;
