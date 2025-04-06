@@ -1,63 +1,124 @@
+<!-- games.json -->
 [
   {
     "title": "Moto X3M",
     "url": "https://games.indranil.fun/moto-x3m/index.html",
-    "thumbnail": "https://games.indranil.fun/thumbnails/moto-x3m.webp",
+    "thumbnail": "https://games.indranil.fun/thumbs/moto-x3m.webp",
     "category": "Racing"
   },
   {
     "title": "Temple Run 2",
     "url": "https://games.indranil.fun/temple-run-2/index.html",
-    "thumbnail": "https://games.indranil.fun/thumbnails/temple-run-2.webp",
+    "thumbnail": "https://games.indranil.fun/thumbs/temple-run-2.webp",
     "category": "Adventure"
   },
   {
     "title": "Basketball Stars",
     "url": "https://games.indranil.fun/basketball-stars/index.html",
-    "thumbnail": "https://games.indranil.fun/thumbnails/basketball-stars.webp",
+    "thumbnail": "https://games.indranil.fun/thumbs/basketball-stars.webp",
     "category": "Sports"
-  },
-  {
-    "title": "Cut the Rope",
-    "url": "https://games.indranil.fun/cut-the-rope/index.html",
-    "thumbnail": "https://games.indranil.fun/thumbnails/cut-the-rope.webp",
-    "category": "Puzzle"
-  },
-  {
-    "title": "Subway Surfers",
-    "url": "https://games.indranil.fun/subway-surfers/index.html",
-    "thumbnail": "https://games.indranil.fun/thumbnails/subway-surfers.webp",
-    "category": "Action"
-  },
-  {
-    "title": "Fireboy and Watergirl",
-    "url": "https://games.indranil.fun/fireboy-watergirl/index.html",
-    "thumbnail": "https://games.indranil.fun/thumbnails/fireboy-watergirl.webp",
-    "category": "Adventure"
-  },
-  {
-    "title": "Stickman Fighter",
-    "url": "https://games.indranil.fun/stickman-fighter/index.html",
-    "thumbnail": "https://games.indranil.fun/thumbnails/stickman-fighter.webp",
-    "category": "Action"
   },
   {
     "title": "2048",
     "url": "https://games.indranil.fun/2048/index.html",
-    "thumbnail": "https://games.indranil.fun/thumbnails/2048.webp",
+    "thumbnail": "https://games.indranil.fun/thumbs/2048.webp",
+    "category": "Puzzle"
+  },
+  {
+    "title": "Stickman Fighter",
+    "url": "https://games.indranil.fun/stickman-fighter/index.html",
+    "thumbnail": "https://games.indranil.fun/thumbs/stickman-fighter.webp",
+    "category": "Action"
+  },
+  {
+    "title": "Subway Surfers",
+    "url": "https://games.indranil.fun/subway-surfers/index.html",
+    "thumbnail": "https://games.indranil.fun/thumbs/subway-surfers.webp",
+    "category": "Adventure"
+  },
+  {
+    "title": "Tetris",
+    "url": "https://games.indranil.fun/tetris/index.html",
+    "thumbnail": "https://games.indranil.fun/thumbs/tetris.webp",
     "category": "Puzzle"
   },
   {
     "title": "Football Legends",
     "url": "https://games.indranil.fun/football-legends/index.html",
-    "thumbnail": "https://games.indranil.fun/thumbnails/football-legends.webp",
+    "thumbnail": "https://games.indranil.fun/thumbs/football-legends.webp",
     "category": "Sports"
   },
   {
-    "title": "Real City Driver",
-    "url": "https://games.indranil.fun/real-city-driver/index.html",
-    "thumbnail": "https://games.indranil.fun/thumbnails/real-city-driver.webp",
+    "title": "Fireboy and Watergirl",
+    "url": "https://games.indranil.fun/fireboy-watergirl/index.html",
+    "thumbnail": "https://games.indranil.fun/thumbs/fireboy-watergirl.webp",
+    "category": "Adventure"
+  },
+  {
+    "title": "Cut the Rope",
+    "url": "https://games.indranil.fun/cut-the-rope/index.html",
+    "thumbnail": "https://games.indranil.fun/thumbs/cut-the-rope.webp",
+    "category": "Puzzle"
+  },
+  {
+    "title": "Slope",
+    "url": "https://games.indranil.fun/slope/index.html",
+    "thumbnail": "https://games.indranil.fun/thumbs/slope.webp",
+    "category": "Racing"
+  },
+  {
+    "title": "Among Us Single Player",
+    "url": "https://games.indranil.fun/among-us/index.html",
+    "thumbnail": "https://games.indranil.fun/thumbs/among-us.webp",
+    "category": "Action"
+  },
+  {
+    "title": "Run 3",
+    "url": "https://games.indranil.fun/run-3/index.html",
+    "thumbnail": "https://games.indranil.fun/thumbs/run-3.webp",
+    "category": "Racing"
+  },
+  {
+    "title": "Angry Birds",
+    "url": "https://games.indranil.fun/angry-birds/index.html",
+    "thumbnail": "https://games.indranil.fun/thumbs/angry-birds.webp",
+    "category": "Puzzle"
+  },
+  {
+    "title": "Zombs Royale",
+    "url": "https://games.indranil.fun/zombs-royale/index.html",
+    "thumbnail": "https://games.indranil.fun/thumbs/zombs-royale.webp",
+    "category": "Action"
+  },
+  {
+    "title": "Snowball.io",
+    "url": "https://games.indranil.fun/snowball-io/index.html",
+    "thumbnail": "https://games.indranil.fun/thumbs/snowball-io.webp",
+    "category": "Action"
+  },
+  {
+    "title": "Paper.io 2",
+    "url": "https://games.indranil.fun/paper-io-2/index.html",
+    "thumbnail": "https://games.indranil.fun/thumbs/paper-io-2.webp",
+    "category": "Puzzle"
+  },
+  {
+    "title": "Flappy Bird",
+    "url": "https://games.indranil.fun/flappy-bird/index.html",
+    "thumbnail": "https://games.indranil.fun/thumbs/flappy-bird.webp",
+    "category": "Adventure"
+  },
+  {
+    "title": "Tunnel Rush",
+    "url": "https://games.indranil.fun/tunnel-rush/index.html",
+    "thumbnail": "https://games.indranil.fun/thumbs/tunnel-rush.webp",
+    "category": "Racing"
+  },
+  {
+    "title": "Parking Fury 3",
+    "url": "https://games.indranil.fun/parking-fury-3/index.html",
+    "thumbnail": "https://games.indranil.fun/thumbs/parking-fury-3.webp",
     "category": "Racing"
   }
-  // Add more games up to 50+ following same structure
+  // Add more games up to 50 in same format...
 ]
