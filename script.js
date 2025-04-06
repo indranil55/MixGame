@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const searchInput = document.getElementById("searchInput");
   const topGamesSection = document.getElementById("topGames");
   const modal = document.getElementById("gameModal");
-  const modalFrame = document.getElementById("gameFrame");
+  const modalContent = document.querySelector(".modal-content");
   const modalClose = document.getElementById("modalClose");
 
   let gamesData = [];
@@ -41,8 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <h3>${game.title}</h3>
       `;
       card.addEventListener("click", () => {
-        modalFrame.src = game.url;
-        modal.classList.add("active");
+        openGameModal(game.url);
       });
       gameContainer.appendChild(card);
     });
@@ -58,11 +57,26 @@ document.addEventListener("DOMContentLoaded", () => {
         <h3>${game.title}</h3>
       `;
       card.addEventListener("click", () => {
-        modalFrame.src = game.url;
-        modal.classList.add("active");
+        openGameModal(game.url);
       });
       topGamesSection.appendChild(card);
     });
+  }
+
+  function openGameModal(url) {
+    modalContent.innerHTML = `
+      <span id="modalClose" class="close">&times;</span>
+      <iframe src="${url}" frameborder="0" allowfullscreen></iframe>
+    `;
+    modal.classList.add("active");
+
+    // Re-bind close button (as it's now re-rendered)
+    document.getElementById("modalClose").addEventListener("click", closeModal);
+  }
+
+  function closeModal() {
+    modal.classList.remove("active");
+    modalContent.innerHTML = ""; // Clear iframe
   }
 
   categoryFilter.addEventListener("change", () => {
@@ -77,15 +91,9 @@ document.addEventListener("DOMContentLoaded", () => {
     renderGames(filtered);
   });
 
-  modalClose.addEventListener("click", () => {
-    modal.classList.remove("active");
-    modalFrame.src = "";
-  });
-
   window.addEventListener("click", (e) => {
     if (e.target === modal) {
-      modal.classList.remove("active");
-      modalFrame.src = "";
+      closeModal();
     }
   });
 });
