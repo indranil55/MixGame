@@ -1,24 +1,20 @@
 const games = [
   {
-    title: "Temple Run",
-    category: "Adventure",
-    thumbnail: "https://img.gamedistribution.com/51e2dc353f3645c19a2dfef2c8b4a306-512x384.jpeg",
-    url: "https://html5.gamedistribution.com/51e2dc353f3645c19a2dfef2c8b4a306/?gd_sdk_referrer_url=https://indranil55.github.io/MixGame/"
+    title: "Zombie Hunter",
+    thumbnail: "https://www.gamepix.com/assets/img/zombie-hunter.jpg",
+    url: "https://www.gamepix.com/play/zombie-hunter"
   },
   {
-    title: "Cut The Rope",
-    category: "Puzzle",
-    thumbnail: "https://img.gamedistribution.com/45bbef079f814dd3a7dd292d9e4bc5e2-512x384.jpeg",
-    url: "https://html5.gamedistribution.com/45bbef079f814dd3a7dd292d9e4bc5e2/?gd_sdk_referrer_url=https://indranil55.github.io/MixGame/"
+    title: "Candy Crush Saga",
+    thumbnail: "https://www.gamepix.com/assets/img/candy-crush.jpg",
+    url: "https://www.gamepix.com/play/candy-crush"
   },
   {
-    title: "Penalty Kick",
-    category: "Sports",
-    thumbnail: "https://img.gamedistribution.com/8d4bb97953cb4b1db3ed6e1e5458cfd4-512x384.jpeg",
-    url: "https://html5.gamedistribution.com/8d4bb97953cb4b1db3ed6e1e5458cfd4/?gd_sdk_referrer_url=https://indranil55.github.io/MixGame/"
+    title: "Car Racing",
+    thumbnail: "https://www.gamepix.com/assets/img/car-racing.jpg",
+    url: "https://www.gamepix.com/play/car-racing"
   }
 ];
-
 const gamesGrid = document.getElementById("games-grid");
 const modal = document.getElementById("game-modal");
 const iframe = document.getElementById("game-frame");
