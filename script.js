@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const gameContainer = document.getElementById("gameContainer");
-  const categoryFilter = document.getElementById("categoryFilter");
-  const searchInput = document.getElementById("searchInput");
-  const topGamesSection = document.getElementById("topGames");
+  const gamesGrid = document.getElementById("games-grid");
+  const topGames = document.getElementById("topGames");
+  const searchBar = document.getElementById("searchBar");
+  const categoryButtons = document.querySelectorAll("#categoryFilter button");
   const modal = document.getElementById("gameModal");
-  const modalContent = document.querySelector(".modal-content");
+  const modalFrame = document.getElementById("gameFrame");
   const modalClose = document.getElementById("modalClose");
 
   let gamesData = [];
@@ -13,87 +13,69 @@ document.addEventListener("DOMContentLoaded", () => {
     .then((res) => res.json())
     .then((data) => {
       gamesData = data;
-      renderCategories(data);
-      renderGames(data);
       renderTopGames(data);
+      renderGames(data);
     });
-
-  function renderCategories(data) {
-    const categories = [...new Set(data.map((game) => game.category))];
-    categories.sort();
-    categories.unshift("All");
-
-    categories.forEach((category) => {
-      const option = document.createElement("option");
-      option.value = category;
-      option.textContent = category;
-      categoryFilter.appendChild(option);
-    });
-  }
 
   function renderGames(data) {
-    gameContainer.innerHTML = "";
+    gamesGrid.innerHTML = "";
     data.forEach((game) => {
       const card = document.createElement("div");
       card.className = "game-card";
       card.innerHTML = `
-        <img src="${game.thumbnail}" alt="${game.title}" loading="lazy" />
+        <img src="${game.thumbnail}" alt="${game.title}" loading="lazy">
         <h3>${game.title}</h3>
       `;
-      card.addEventListener("click", () => {
-        openGameModal(game.url);
-      });
-      gameContainer.appendChild(card);
+      card.addEventListener("click", () => openModal(game.url));
+      gamesGrid.appendChild(card);
     });
   }
 
   function renderTopGames(data) {
-    const topGames = data.filter((game) => game.top);
-    topGames.forEach((game) => {
+    topGames.innerHTML = "";
+    const top = data.filter((g) => g.top);
+    top.forEach((game) => {
       const card = document.createElement("div");
       card.className = "game-card";
       card.innerHTML = `
-        <img src="${game.thumbnail}" alt="${game.title}" loading="lazy" />
+        <img src="${game.thumbnail}" alt="${game.title}" loading="lazy">
         <h3>${game.title}</h3>
       `;
-      card.addEventListener("click", () => {
-        openGameModal(game.url);
-      });
-      topGamesSection.appendChild(card);
+      card.addEventListener("click", () => openModal(game.url));
+      topGames.appendChild(card);
     });
   }
 
-  function openGameModal(url) {
-    modalContent.innerHTML = `
-      <span id="modalClose" class="close">&times;</span>
-      <iframe src="${url}" frameborder="0" allowfullscreen></iframe>
-    `;
+  function openModal(url) {
+    modalFrame.src = url;
     modal.classList.add("active");
-
-    // Re-bind close button (as it's now re-rendered)
-    document.getElementById("modalClose").addEventListener("click", closeModal);
   }
 
-  function closeModal() {
+  modalClose.addEventListener("click", () => {
     modal.classList.remove("active");
-    modalContent.innerHTML = ""; // Clear iframe
-  }
-
-  categoryFilter.addEventListener("change", () => {
-    const value = categoryFilter.value;
-    const filtered = value === "All" ? gamesData : gamesData.filter((g) => g.category === value);
-    renderGames(filtered);
-  });
-
-  searchInput.addEventListener("input", () => {
-    const value = searchInput.value.toLowerCase();
-    const filtered = gamesData.filter((g) => g.title.toLowerCase().includes(value));
-    renderGames(filtered);
+    modalFrame.src = "";
   });
 
   window.addEventListener("click", (e) => {
     if (e.target === modal) {
-      closeModal();
+      modal.classList.remove("active");
+      modalFrame.src = "";
     }
+  });
+
+  searchBar.addEventListener("input", () => {
+    const value = searchBar.value.toLowerCase();
+    const filtered = gamesData.filter((g) => g.title.toLowerCase().includes(value));
+    renderGames(filtered);
+  });
+
+  categoryButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      categoryButtons.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      const cat = btn.getAttribute("data-category");
+      const filtered = cat === "All" ? gamesData : gamesData.filter((g) => g.category === cat);
+      renderGames(filtered);
+    });
   });
 });
