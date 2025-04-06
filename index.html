@@ -1,54 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MixGame Zone - Play Free HTML5 Games</title>
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MixGame Zone - Play Free HTML5 Games</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
-   <header>
+  <header>
     <div class="logo">🎮 MixGame Zone</div>
     <p class="tagline">Play Instantly – No Download Needed!</p>
-    <!-- অন্যান্য ন্যাভিগেশন এলিমেন্ট -->
-</header>
-    <main>
-        <section class="hero">
-            <h1>🔥 Play Free HTML5 Games</h1>
-            <p>Tap & Play Instantly! No downloads required 🎯</p>
-        </section>
+    <nav>
+      <ul>
+        <li><a href="#" class="active">All</a></li>
+        <li><a href="#" data-category="Action">Action</a></li>
+        <li><a href="#" data-category="Puzzle">Puzzle</a></li>
+        <li><a href="#" data-category="Sports">Sports</a></li>
+        <li><a href="#" data-category="Adventure">Adventure</a></li>
+        <li><a href="#" data-category="Racing">Racing</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <section class="game-categories">
-            <div class="category-buttons">
-                <button class="active" data-category="All">All Games</button>
-                <button data-category="Action">Action</button>
-                <button data-category="Puzzle">Puzzle</button>
-                <button data-category="Adventure">Adventure</button>
-                <button data-category="Sports">Sports</button>
-                <button data-category="Racing">Racing</button>
-            </div>
-        </section>
+  <main>
+    <section class="hero">
+      <h1>🔥 Play Free HTML5 Games</h1>
+      <p>Tap & Play Instantly! No downloads required 🎯</p>
+    </section>
 
-        <section class="games-container">
-            <div class="games-grid" id="games-grid"></div>
-            <div class="loading" id="loading">Loading games...</div>
-            <button class="load-more" id="load-more">Load More Games</button>
-        </section>
-    </main>
+    <section class="game-categories">
+      <div class="category-buttons">
+        <button class="active" data-category="All">All Games</button>
+        <button data-category="Action">Action</button>
+        <button data-category="Puzzle">Puzzle</button>
+        <button data-category="Adventure">Adventure</button>
+        <button data-category="Sports">Sports</button>
+        <button data-category="Racing">Racing</button>
+      </div>
+    </section>
 
-    <footer>
-        <p>© 2025 MixGame Zone. All rights reserved.</p>
-    </footer>
+    <section class="games-container">
+      <div class="games-grid" id="games-grid"></div>
+      <div class="loading" id="loading">Loading games...</div>
+      <button class="load-more" id="load-more">Load More Games</button>
+    </section>
+  </main>
 
-    <div class="game-modal" id="game-modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <iframe id="game-frame" frameborder="0" allowfullscreen loading="lazy"></iframe>
-        </div>
+  <footer>
+    <p>© 2025 MixGame Zone. All rights reserved.</p>
+  </footer>
+
+  <div class="game-modal" id="game-modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <iframe id="game-frame" frameborder="0" allowfullscreen loading="lazy"></iframe>
     </div>
+  </div>
 
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
