@@ -90,70 +90,52 @@
     "category": "Adventure"
   },
   {
-    "title": "Fruit Ninja",
-    "url": "https://games.indranil.fun/fruit-ninja/index.html",
-    "thumbnail": "https://games.indranil.fun/thumbs/fruit-ninja.webp",
-    "category": "Kids"
+    "title": "Jetpack Joyride",
+    "url": "https://games.indranil.fun/jetpack-joyride/index.html",
+    "thumbnail": "https://games.indranil.fun/thumbs/jetpack-joyride.webp",
+    "category": "Action"
   },
   {
-    "title": "Tank Trouble",
-    "url": "https://games.indranil.fun/tank-trouble/index.html",
-    "thumbnail": "https://games.indranil.fun/thumbs/tank-trouble.webp",
-    "category": "Shooting"
-  },
-  {
-    "title": "Jelly Truck",
-    "url": "https://games.indranil.fun/jelly-truck/index.html",
-    "thumbnail": "https://games.indranil.fun/thumbs/jelly-truck.webp",
+    "title": "Car Drift Master",
+    "url": "https://games.indranil.fun/car-drift-master/index.html",
+    "thumbnail": "https://games.indranil.fun/thumbs/car-drift-master.webp",
     "category": "Racing"
   },
   {
-    "title": "Pacman",
-    "url": "https://games.indranil.fun/pacman/index.html",
-    "thumbnail": "https://games.indranil.fun/thumbs/pacman.webp",
-    "category": "Arcade"
-  },
-  {
-    "title": "Dino Jump",
-    "url": "https://games.indranil.fun/dino-jump/index.html",
-    "thumbnail": "https://games.indranil.fun/thumbs/dino-jump.webp",
-    "category": "Kids"
-  },
-  {
-    "title": "Parking Fury",
-    "url": "https://games.indranil.fun/parking-fury/index.html",
-    "thumbnail": "https://games.indranil.fun/thumbs/parking-fury.webp",
-    "category": "Racing"
-  },
-  {
-    "title": "Connect 4",
-    "url": "https://games.indranil.fun/connect-4/index.html",
-    "thumbnail": "https://games.indranil.fun/thumbs/connect-4.webp",
+    "title": "Sudoku",
+    "url": "https://games.indranil.fun/sudoku/index.html",
+    "thumbnail": "https://games.indranil.fun/thumbs/sudoku.webp",
     "category": "Brain"
   },
   {
-    "title": "Hex Puzzle",
-    "url": "https://games.indranil.fun/hex-puzzle/index.html",
-    "thumbnail": "https://games.indranil.fun/thumbs/hex-puzzle.webp",
-    "category": "Puzzle"
+    "title": "Tank Battle",
+    "url": "https://games.indranil.fun/tank-battle/index.html",
+    "thumbnail": "https://games.indranil.fun/thumbs/tank-battle.webp",
+    "category": "Shooting"
   },
   {
-    "title": "Tower Defense",
-    "url": "https://games.indranil.fun/tower-defense/index.html",
-    "thumbnail": "https://games.indranil.fun/thumbs/tower-defense.webp",
+    "title": "Coloring Book",
+    "url": "https://games.indranil.fun/coloring-book/index.html",
+    "thumbnail": "https://games.indranil.fun/thumbs/coloring-book.webp",
+    "category": "Kids"
+  },
+  {
+    "title": "Checkers",
+    "url": "https://games.indranil.fun/checkers/index.html",
+    "thumbnail": "https://games.indranil.fun/thumbs/checkers.webp",
     "category": "Strategy"
   },
   {
-    "title": "Air Hockey",
-    "url": "https://games.indranil.fun/air-hockey/index.html",
-    "thumbnail": "https://games.indranil.fun/thumbs/air-hockey.webp",
-    "category": "Sports"
+    "title": "Connect Dots",
+    "url": "https://games.indranil.fun/connect-dots/index.html",
+    "thumbnail": "https://games.indranil.fun/thumbs/connect-dots.webp",
+    "category": "Brain"
   },
   {
-    "title": "Tic Tac Toe",
-    "url": "https://games.indranil.fun/tic-tac-toe/index.html",
-    "thumbnail": "https://games.indranil.fun/thumbs/tic-tac-toe.webp",
-    "category": "Kids"
+    "title": "Helix Jump",
+    "url": "https://games.indranil.fun/helix-jump/index.html",
+    "thumbnail": "https://games.indranil.fun/thumbs/helix-jump.webp",
+    "category": "Puzzle"
   },
   {
     "title": "Mini Golf",
@@ -162,27 +144,9 @@
     "category": "Sports"
   },
   {
-    "title": "Mahjong",
-    "url": "https://games.indranil.fun/mahjong/index.html",
-    "thumbnail": "https://games.indranil.fun/thumbs/mahjong.webp",
-    "category": "Brain"
-  },
-  {
-    "title": "Sniper Mission",
-    "url": "https://games.indranil.fun/sniper-mission/index.html",
-    "thumbnail": "https://games.indranil.fun/thumbs/sniper-mission.webp",
-    "category": "Shooting"
-  },
-  {
-    "title": "Super Mario",
-    "url": "https://games.indranil.fun/super-mario/index.html",
-    "thumbnail": "https://games.indranil.fun/thumbs/super-mario.webp",
+    "title": "Jungle Run",
+    "url": "https://games.indranil.fun/jungle-run/index.html",
+    "thumbnail": "https://games.indranil.fun/thumbs/jungle-run.webp",
     "category": "Adventure"
-  },
-  {
-    "title": "Memory Match",
-    "url": "https://games.indranil.fun/memory-match/index.html",
-    "thumbnail": "https://games.indranil.fun/thumbs/memory-match.webp",
-    "category": "Brain"
   }
 ]
