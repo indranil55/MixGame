@@ -1,59 +1,57 @@
 const games = [
-    {
-        title: "Temple Run",
-        category: "Action",
-        thumbnail: "https://via.placeholder.com/200x150?text=Temple+Run",
-        url: "https://html5.gamedistribution.com/rvvASMiH/71b0f09a711a4c848bf6db0c10d118a0/index.html"
-    },
-    {
-        title: "Candy Crush",
-        category: "Puzzle",
-        thumbnail: "https://via.placeholder.com/200x150?text=Candy+Crush",
-        url: "https://html5.gamedistribution.com/rvvASMiH/c0f23092e1864f7f9fb3ed5f9790933a/index.html"
-    }
+  {
+    title: "Temple Run",
+    category: "Adventure",
+    thumbnail: "https://img.gamedistribution.com/51e2dc353f3645c19a2dfef2c8b4a306-512x384.jpeg",
+    url: "https://html5.gamedistribution.com/51e2dc353f3645c19a2dfef2c8b4a306/?gd_sdk_referrer_url=https://indranil55.github.io/MixGame/"
+  },
+  {
+    title: "Cut The Rope",
+    category: "Puzzle",
+    thumbnail: "https://img.gamedistribution.com/45bbef079f814dd3a7dd292d9e4bc5e2-512x384.jpeg",
+    url: "https://html5.gamedistribution.com/45bbef079f814dd3a7dd292d9e4bc5e2/?gd_sdk_referrer_url=https://indranil55.github.io/MixGame/"
+  },
+  {
+    title: "Penalty Kick",
+    category: "Sports",
+    thumbnail: "https://img.gamedistribution.com/8d4bb97953cb4b1db3ed6e1e5458cfd4-512x384.jpeg",
+    url: "https://html5.gamedistribution.com/8d4bb97953cb4b1db3ed6e1e5458cfd4/?gd_sdk_referrer_url=https://indranil55.github.io/MixGame/"
+  }
 ];
 
-function loadGames(category = "All Games") {
-    const grid = document.getElementById("games-grid");
-    grid.innerHTML = "";
-    const filteredGames = category === "All Games" ? games : games.filter(g => g.category === category);
+const gamesGrid = document.getElementById("games-grid");
+const modal = document.getElementById("game-modal");
+const iframe = document.getElementById("game-frame");
+const closeModal = document.querySelector(".close-modal");
 
-    filteredGames.forEach(game => {
-        const gameCard = document.createElement("div");
-        gameCard.className = "game-card";
-        gameCard.innerHTML = `
-            <img src="${game.thumbnail}" alt="${game.title}">
-            <h3>${game.title}</h3>
-        `;
-        gameCard.addEventListener("click", () => openGameModal(game.url));
-        grid.appendChild(gameCard);
+function loadGames() {
+  games.forEach(game => {
+    const card = document.createElement("div");
+    card.classList.add("game-card");
+    card.innerHTML = `
+      <img src="${game.thumbnail}" alt="${game.title}">
+      <div class="overlay">▶ Tap to Play</div>
+      <h3>${game.title}</h3>
+    `;
+    card.addEventListener("click", () => {
+      iframe.src = game.url;
+      modal.style.display = "flex";
     });
-
-    document.getElementById("loading").style.display = "none";
+    gamesGrid.appendChild(card);
+  });
+  document.getElementById("loading").style.display = "none";
 }
 
-function openGameModal(url) {
-    const modal = document.getElementById("game-modal");
-    const iframe = document.getElementById("game-frame");
-    iframe.src = url;
-    modal.style.display = "flex";
-}
+closeModal.addEventListener("click", () => {
+  modal.style.display = "none";
+  iframe.src = "";
+});
 
-document.querySelector(".close-modal").addEventListener("click", () => {
-    const modal = document.getElementById("game-modal");
-    const iframe = document.getElementById("game-frame");
-    iframe.src = "";
+window.addEventListener("click", e => {
+  if (e.target === modal) {
     modal.style.display = "none";
+    iframe.src = "";
+  }
 });
 
-document.querySelectorAll(".category-buttons button").forEach(button => {
-    button.addEventListener("click", () => {
-        document.querySelectorAll(".category-buttons button").forEach(b => b.classList.remove("active"));
-        button.classList.add("active");
-        loadGames(button.textContent);
-    });
-});
-
-window.onload = () => {
-    loadGames();
-};
+window.addEventListener("DOMContentLoaded", loadGames);
