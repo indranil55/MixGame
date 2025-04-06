@@ -3,61 +3,51 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MixGameZone</title>
+  <title>MixGameZone 🎮</title>
   <link rel="stylesheet" href="styles.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
-    <div class="logo">🎮 MixGameZone</div>
+    <h1>🎮 MixGameZone</h1>
     <p class="tagline">Play Instantly – No Download Needed!</p>
-    <nav>
-      <ul>
-        <li><a href="#" class="active">All</a></li>
-        <li><a href="#" data-category="Action">Action</a></li>
-        <li><a href="#" data-category="Puzzle">Puzzle</a></li>
-        <li><a href="#" data-category="Sports">Sports</a></li>
-        <li><a href="#" data-category="Adventure">Adventure</a></li>
-        <li><a href="#" data-category="Racing">Racing</a></li>
-      </ul>
-    </nav>
+    <input type="text" id="searchBar" placeholder="🔍 Search games..." />
+    <div id="categoryFilter">
+      <button data-category="All">All</button>
+      <button data-category="Action">Action</button>
+      <button data-category="Racing">Racing</button>
+      <button data-category="Brain">Brain</button>
+      <button data-category="Shooting">Shooting</button>
+      <button data-category="Kids">Kids</button>
+      <button data-category="Strategy">Strategy</button>
+      <button data-category="Puzzle">Puzzle</button>
+      <button data-category="Sports">Sports</button>
+      <button data-category="Adventure">Adventure</button>
+    </div>
   </header>
 
   <main>
-    <section class="hero">
-      <h1>🔥 Play Free Games 🔥</h1>
-      <p>Tap & Play Instantly! No downloads required 🎯</p>
+    <section id="top-games">
+      <h2>🌟 Top Games</h2>
+      <div class="games-grid" id="topGames"></div>
     </section>
 
-    <section class="game-categories">
-      <div class="category-buttons">
-        <button class="active" data-category="All">All Games</button>
-        <button data-category="Action">Action</button>
-        <button data-category="Puzzle">Puzzle</button>
-        <button data-category="Adventure">Adventure</button>
-        <button data-category="Sports">Sports</button>
-        <button data-category="Racing">Racing</button>
-      </div>
-    </section>
-
-    <section class="games-container">
+    <section id="all-games">
+      <h2>🎮 All Games</h2>
       <div class="games-grid" id="games-grid"></div>
-      <div class="loading" id="loading">Loading games...</div>
-      <button class="load-more" id="load-more">Load More Games</button>
+      <div id="loading">Loading more games...</div>
     </section>
   </main>
 
-  <footer>
-    <p>© 2025 MixGame Zone. All rights reserved.</p>
-  </footer>
-
-  <div class="game-modal" id="game-modal">
+  <div id="gameModal" class="modal">
     <div class="modal-content">
-      <span class="close-modal">&times;</span>
-      <iframe id="game-frame" frameborder="0" allowfullscreen loading="lazy"></iframe>
+      <span id="closeModal">&times;</span>
+      <iframe id="gameFrame" src="" frameborder="0" allowfullscreen></iframe>
     </div>
   </div>
+
+  <footer>
+    <p>© 2025 MixGameZone – All rights reserved.</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
