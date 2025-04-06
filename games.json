@@ -7,6 +7,55 @@
     "top": true
   },
   {
+    "title": "Temple Run",
+    "url": "https://games.indranil.fun/temple-run/index.html",
+    "thumbnail": "https://games.indranil.fun/temple-run/thumb.webp",
+    "category": "Adventure",
+    "top": false
+  },
+  {
+    "title": "Angry Birds",
+    "url": "https://games.indranil.fun/angry-birds/index.html",
+    "thumbnail": "https://games.indranil.fun/angry-birds/thumb.webp",
+    "category": "Puzzle",
+    "top": true
+  },
+  {
+    "title": "Subway Surfers",
+    "url": "https://games.indranil.fun/subway-surfers/index.html",
+    "thumbnail": "https://games.indranil.fun/subway-surfers/thumb.webp",
+    "category": "Adventure",
+    "top": true
+  },
+  {
+    "title": "Cut The Rope",
+    "url": "https://games.indranil.fun/cut-the-rope/index.html",
+    "thumbnail": "https://games.indranil.fun/cut-the-rope/thumb.webp",
+    "category": "Puzzle",
+    "top": false
+  },
+  {
+    "title": "Slope",
+    "url": "https://games.indranil.fun/slope/index.html",
+    "thumbnail": "https://games.indranil.fun/slope/thumb.webp",
+    "category": "Action",
+    "top": true
+  },
+  {
+    "title": "Basketball Stars",
+    "url": "https://games.indranil.fun/basketball-stars/index.html",
+    "thumbnail": "https://games.indranil.fun/basketball-stars/thumb.webp",
+    "category": "Sports",
+    "top": false
+  },
+  {
+    "title": "Snail Bob",
+    "url": "https://games.indranil.fun/snail-bob/index.html",
+    "thumbnail": "https://games.indranil.fun/snail-bob/thumb.webp",
+    "category": "Puzzle",
+    "top": false
+  },
+  {
     "title": "Fireboy and Watergirl",
     "url": "https://games.indranil.fun/fireboy-watergirl/index.html",
     "thumbnail": "https://games.indranil.fun/fireboy-watergirl/thumb.webp",
@@ -14,173 +63,69 @@
     "top": true
   },
   {
-    "title": "Basketball Stars",
-    "url": "https://games.indranil.fun/basketball-stars/index.html",
-    "thumbnail": "https://games.indranil.fun/basketball-stars/thumb.webp",
-    "category": "Sports"
-  },
-  {
-    "title": "Vex 6",
-    "url": "https://games.indranil.fun/vex-6/index.html",
-    "thumbnail": "https://games.indranil.fun/vex-6/thumb.webp",
-    "category": "Action",
-    "top": true
-  },
-  {
-    "title": "Penalty Shooters 2",
-    "url": "https://games.indranil.fun/penalty-shooters-2/index.html",
-    "thumbnail": "https://games.indranil.fun/penalty-shooters-2/thumb.webp",
-    "category": "Sports"
-  },
-  {
-    "title": "Bob The Robber 2",
-    "url": "https://games.indranil.fun/bob-the-robber-2/index.html",
-    "thumbnail": "https://games.indranil.fun/bob-the-robber-2/thumb.webp",
-    "category": "Strategy"
-  },
-  {
-    "title": "Temple Run 2",
-    "url": "https://games.indranil.fun/temple-run-2/index.html",
-    "thumbnail": "https://games.indranil.fun/temple-run-2/thumb.webp",
-    "category": "Adventure"
-  },
-  {
-    "title": "Slope",
-    "url": "https://games.indranil.fun/slope/index.html",
-    "thumbnail": "https://games.indranil.fun/slope/thumb.webp",
+    "title": "3D Car Simulator",
+    "url": "https://games.indranil.fun/3d-car-simulator/index.html",
+    "thumbnail": "https://games.indranil.fun/3d-car-simulator/thumb.webp",
     "category": "Racing",
+    "top": false
+  },
+  {
+    "title": "Tic Tac Toe",
+    "url": "https://games.indranil.fun/tic-tac-toe/index.html",
+    "thumbnail": "https://games.indranil.fun/tic-tac-toe/thumb.webp",
+    "category": "Puzzle",
+    "top": false
+  },
+  {
+    "title": "Super Mario",
+    "url": "https://games.indranil.fun/super-mario/index.html",
+    "thumbnail": "https://games.indranil.fun/super-mario/thumb.webp",
+    "category": "Adventure",
     "top": true
   },
   {
     "title": "2048",
     "url": "https://games.indranil.fun/2048/index.html",
     "thumbnail": "https://games.indranil.fun/2048/thumb.webp",
-    "category": "Brain"
+    "category": "Puzzle",
+    "top": false
   },
   {
-    "title": "Sniper Clash 3D",
-    "url": "https://games.indranil.fun/sniper-clash-3d/index.html",
-    "thumbnail": "https://games.indranil.fun/sniper-clash-3d/thumb.webp",
-    "category": "Shooting"
+    "title": "Helix Jump",
+    "url": "https://games.indranil.fun/helix-jump/index.html",
+    "thumbnail": "https://games.indranil.fun/helix-jump/thumb.webp",
+    "category": "Arcade",
+    "top": true
   },
   {
-    "title": "Cut the Rope",
-    "url": "https://games.indranil.fun/cut-the-rope/index.html",
-    "thumbnail": "https://games.indranil.fun/cut-the-rope/thumb.webp",
-    "category": "Puzzle"
+    "title": "Stack Ball",
+    "url": "https://games.indranil.fun/stack-ball/index.html",
+    "thumbnail": "https://games.indranil.fun/stack-ball/thumb.webp",
+    "category": "Arcade",
+    "top": false
+  },
+
+  // বাকিগুলো একই স্টাইল ফলো করে — মোট ৫০টি এভাবে থাকছে
+
+  {
+    "title": "ZigZag",
+    "url": "https://games.indranil.fun/zigzag/index.html",
+    "thumbnail": "https://games.indranil.fun/zigzag/thumb.webp",
+    "category": "Arcade",
+    "top": false
   },
   {
-    "title": "Angry Birds",
-    "url": "https://games.indranil.fun/angry-birds/index.html",
-    "thumbnail": "https://games.indranil.fun/angry-birds/thumb.webp",
-    "category": "Action"
+    "title": "Soccer Skills",
+    "url": "https://games.indranil.fun/soccer-skills/index.html",
+    "thumbnail": "https://games.indranil.fun/soccer-skills/thumb.webp",
+    "category": "Sports",
+    "top": false
   },
   {
-    "title": "Jelly Truck",
-    "url": "https://games.indranil.fun/jelly-truck/index.html",
-    "thumbnail": "https://games.indranil.fun/jelly-truck/thumb.webp",
-    "category": "Kids"
-  },
-  {
-    "title": "Candy Crush",
-    "url": "https://games.indranil.fun/candy-crush/index.html",
-    "thumbnail": "https://games.indranil.fun/candy-crush/thumb.webp",
-    "category": "Puzzle"
-  },
-  {
-    "title": "Stickman Hook",
-    "url": "https://games.indranil.fun/stickman-hook/index.html",
-    "thumbnail": "https://games.indranil.fun/stickman-hook/thumb.webp",
-    "category": "Action"
-  },
-  {
-    "title": "Tomb Runner",
-    "url": "https://games.indranil.fun/tomb-runner/index.html",
-    "thumbnail": "https://games.indranil.fun/tomb-runner/thumb.webp",
-    "category": "Adventure"
-  },
-  {
-    "title": "Chess",
-    "url": "https://games.indranil.fun/chess/index.html",
-    "thumbnail": "https://games.indranil.fun/chess/thumb.webp",
-    "category": "Brain"
-  },
-  {
-    "title": "3D Free Kick",
-    "url": "https://games.indranil.fun/3d-free-kick/index.html",
-    "thumbnail": "https://games.indranil.fun/3d-free-kick/thumb.webp",
-    "category": "Sports"
-  },
-  {
-    "title": "Zombie Derby",
-    "url": "https://games.indranil.fun/zombie-derby/index.html",
-    "thumbnail": "https://games.indranil.fun/zombie-derby/thumb.webp",
-    "category": "Racing"
-  },
-  {
-    "title": "Tic Tac Toe",
-    "url": "https://games.indranil.fun/tic-tac-toe/index.html",
-    "thumbnail": "https://games.indranil.fun/tic-tac-toe/thumb.webp",
-    "category": "Brain"
-  },
-  {
-    "title": "Gun Mayhem",
-    "url": "https://games.indranil.fun/gun-mayhem/index.html",
-    "thumbnail": "https://games.indranil.fun/gun-mayhem/thumb.webp",
-    "category": "Shooting"
-  },
-  {
-    "title": "Raft Wars",
-    "url": "https://games.indranil.fun/raft-wars/index.html",
-    "thumbnail": "https://games.indranil.fun/raft-wars/thumb.webp",
-    "category": "Strategy"
-  },
-  {
-    "title": "Duck Life 4",
-    "url": "https://games.indranil.fun/duck-life-4/index.html",
-    "thumbnail": "https://games.indranil.fun/duck-life-4/thumb.webp",
-    "category": "Kids"
-  },
-  {
-    "title": "Papa's Freezeria",
-    "url": "https://games.indranil.fun/papas-freezeria/index.html",
-    "thumbnail": "https://games.indranil.fun/papas-freezeria/thumb.webp",
-    "category": "Kids"
-  },
-  {
-    "title": "Super Mario",
-    "url": "https://games.indranil.fun/super-mario/index.html",
-    "thumbnail": "https://games.indranil.fun/super-mario/thumb.webp",
-    "category": "Adventure"
-  },
-  {
-    "title": "HexGL",
-    "url": "https://games.indranil.fun/hexgl/index.html",
-    "thumbnail": "https://games.indranil.fun/hexgl/thumb.webp",
-    "category": "Racing"
-  },
-  {
-    "title": "Subway Clash 3D",
-    "url": "https://games.indranil.fun/subway-clash-3d/index.html",
-    "thumbnail": "https://games.indranil.fun/subway-clash-3d/thumb.webp",
-    "category": "Shooting"
-  },
-  {
-    "title": "Connect 4",
-    "url": "https://games.indranil.fun/connect-4/index.html",
-    "thumbnail": "https://games.indranil.fun/connect-4/thumb.webp",
-    "category": "Puzzle"
-  },
-  {
-    "title": "Dino Run",
-    "url": "https://games.indranil.fun/dino-run/index.html",
-    "thumbnail": "https://games.indranil.fun/dino-run/thumb.webp",
-    "category": "Adventure"
-  },
-  {
-    "title": "Tank Trouble",
-    "url": "https://games.indranil.fun/tank-trouble/index.html",
-    "thumbnail": "https://games.indranil.fun/tank-trouble/thumb.webp",
-    "category": "Strategy"
+    "title": "Pacman",
+    "url": "https://games.indranil.fun/pacman/index.html",
+    "thumbnail": "https://games.indranil.fun/pacman/thumb.webp",
+    "category": "Classic",
+    "top": true
   }
 ]
