@@ -1,81 +1,59 @@
-// script.js
-const gamesPerPage = 20;
-let currentPage = 0;
 let allGames = [];
-let currentCategory = "All";
+let loadedCount = 0;
+const GAMES_PER_LOAD = 12;
 
-const gamesGrid = document.getElementById("games-grid");
-const loading = document.getElementById("loading");
-const loadMoreBtn = document.getElementById("load-more");
-const gameModal = document.getElementById("game-modal");
-const gameFrame = document.getElementById("game-frame");
-const closeModal = document.querySelector(".close-modal");
+fetch("games.json")
+  .then(res => res.json())
+  .then(data => {
+    allGames = data;
+    loadGames();
+  });
 
 function loadGames() {
-  fetch("games.json")
-    .then((response) => response.json())
-    .then((data) => {
-      allGames = data;
-      renderGames();
-    });
-}
-
-function renderGames() {
+  const grid = document.getElementById("games-grid");
+  const loading = document.getElementById("loading");
   loading.style.display = "block";
+
   setTimeout(() => {
-    const filteredGames = currentCategory === "All"
-      ? allGames
-      : allGames.filter((game) => game.category === currentCategory);
-
-    const start = currentPage * gamesPerPage;
-    const end = start + gamesPerPage;
-    const gamesToShow = filteredGames.slice(start, end);
-
-    gamesToShow.forEach((game) => {
+    let slice = allGames.slice(loadedCount, loadedCount + GAMES_PER_LOAD);
+    slice.forEach(game => {
       const card = document.createElement("div");
       card.className = "game-card";
       card.innerHTML = `
-        <img src="${game.thumbnail}" alt="${game.title}" loading="lazy">
-        <div class="game-title">${game.title}</div>
+        <img src="${game.thumbnail}" loading="lazy" alt="${game.title}">
+        <h3>${game.title}</h3>
       `;
       card.addEventListener("click", () => openGame(game.url));
-      gamesGrid.appendChild(card);
+      grid.appendChild(card);
     });
 
+    loadedCount += GAMES_PER_LOAD;
     loading.style.display = "none";
-    currentPage++;
-    if (end >= filteredGames.length) {
-      loadMoreBtn.style.display = "none";
-    } else {
-      loadMoreBtn.style.display = "block";
-    }
   }, 500);
 }
 
-function openGame(url) {
-  gameFrame.src = url;
-  gameModal.style.display = "flex";
-}
+document.getElementById("load-more").addEventListener("click", loadGames);
 
-function closeGame() {
-  gameFrame.src = "";
-  gameModal.style.display = "none";
-}
+document.querySelectorAll(".category-buttons button").forEach(button => {
+  button.addEventListener("click", e => {
+    document.querySelectorAll(".category-buttons button").forEach(b => b.classList.remove("active"));
+    e.target.classList.add("active");
 
-loadMoreBtn.addEventListener("click", renderGames);
-closeModal.addEventListener("click", closeGame);
-
-// Category filter
-const categoryButtons = document.querySelectorAll(".category-buttons button");
-categoryButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    categoryButtons.forEach((btn) => btn.classList.remove("active"));
-    button.classList.add("active");
-    currentCategory = button.dataset.category;
-    currentPage = 0;
-    gamesGrid.innerHTML = "";
-    renderGames();
+    const category = e.target.dataset.category;
+    const filtered = category === "All" ? allGames : allGames.filter(g => g.category === category);
+    document.getElementById("games-grid").innerHTML = "";
+    loadedCount = 0;
+    allGames = filtered;
+    loadGames();
   });
 });
 
-loadGames();
+document.querySelector(".close-modal").addEventListener("click", () => {
+  document.getElementById("game-modal").style.display = "none";
+  document.getElementById("game-frame").src = "";
+});
+
+function openGame(url) {
+  document.getElementById("game-modal").style.display = "flex";
+  document.getElementById("game-frame").src = url;
+}
