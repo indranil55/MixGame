@@ -1,256 +1,64 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IndGameZone - Play 100+ Free Games</title>
+    <title>MixGame Zone - Play Free HTML5 Games</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
-        <div class="logo">🎮 IndGameZone</div>
+        <div class="logo">🎮 MixGame Zone</div>
+        <p class="tagline">Play Instantly – No Download Needed!</p>
         <nav>
             <ul>
                 <li><a href="#" class="active">All</a></li>
                 <li><a href="#" data-category="Action">Action</a></li>
                 <li><a href="#" data-category="Puzzle">Puzzle</a></li>
-                <li><a href="#" data-category="Racing">Racing</a></li>
+                <li><a href="#" data-category="Sports">Sports</a></li>
                 <li><a href="#" data-category="Adventure">Adventure</a></li>
+                <li><a href="#" data-category="Racing">Racing</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero">
-        <h1>🔥 Play 100+ Free Games</h1>
-        <p>Tap & Play Instantly! No downloads required 🎯</p>
-    </section>
     <main>
-    <div class="games-grid" id="games-grid"></div>
-    <div id="loading" style="display: none;">Loading more games...</div>
-    <button id="load-more">Load More Games</button>
-</main>
+        <section class="hero">
+            <h1>🔥 Play Free HTML5 Games</h1>
+            <p>Tap & Play Instantly! No downloads required 🎯</p>
+        </section>
+
+        <section class="game-categories">
+            <div class="category-buttons">
+                <button class="active" data-category="All">All Games</button>
+                <button data-category="Action">Action</button>
+                <button data-category="Puzzle">Puzzle</button>
+                <button data-category="Adventure">Adventure</button>
+                <button data-category="Sports">Sports</button>
+                <button data-category="Racing">Racing</button>
+            </div>
+        </section>
+
+        <section class="games-container">
+            <div class="games-grid" id="games-grid"></div>
+            <div class="loading" id="loading">Loading games...</div>
+            <button class="load-more" id="load-more">Load More Games</button>
+        </section>
+    </main>
+
     <footer>
-        <p>© 2025 IndGameZone. All rights reserved.</p>
+        <p>© 2025 MixGame Zone. All rights reserved.</p>
     </footer>
 
     <div class="game-modal" id="game-modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
-            <iframe id="game-frame" frameborder="0" allowfullscreen></iframe>
+            <iframe id="game-frame" frameborder="0" allowfullscreen loading="lazy"></iframe>
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
-
-
-/* styles.css */
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    background: #f9f9f9;
-    color: #222;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background: #111;
-    color: #fff;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-    padding: 0;
-    margin: 0;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-}
-
-nav a.active, nav a:hover {
-    background: #ff5722;
-}
-
-.hero {
-    padding: 30px;
-    text-align: center;
-    background: linear-gradient(45deg, #ff6f00, #ffca28);
-    color: #fff;
-}
-
-.games-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 15px;
-    padding: 20px;
-}
-
-.games-grid .game-card {
-    background: #fff;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    cursor: pointer;
-    transition: transform 0.2s;
-}
-
-.game-card:hover {
-    transform: scale(1.05);
-}
-
-.game-card img {
-    width: 100%;
-    height: 120px;
-    object-fit: cover;
-}
-
-.game-card .title {
-    padding: 10px;
-    text-align: center;
-    font-weight: 600;
-    font-size: 0.95rem;
-}
-
-#loading {
-    text-align: center;
-    padding: 20px;
-    font-size: 1rem;
-    display: none;
-}
-
-footer {
-    background: #222;
-    color: #ccc;
-    text-align: center;
-    padding: 15px 0;
-}
-
-.game-modal {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.8);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
-}
-
-.modal-content {
-    position: relative;
-    width: 90%;
-    max-width: 800px;
-    height: 90vh;
-    background: #000;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.modal-content iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-}
-
-.close-modal {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    font-size: 28px;
-    color: #fff;
-    cursor: pointer;
-}
-
-
-// script.js
-let currentPage = 0;
-const pageSize = 20;
-const gamesGrid = document.getElementById('games-grid');
-const modal = document.getElementById('game-modal');
-const iframe = document.getElementById('game-frame');
-const loading = document.getElementById('loading');
-
-fetch('games.json')
-  .then(res => res.json())
-  .then(games => {
-    function loadGames() {
-      const start = currentPage * pageSize;
-      const end = start + pageSize;
-      const pageGames = games.slice(start, end);
-      pageGames.forEach(game => {
-        const div = document.createElement('div');
-        div.className = 'game-card';
-        div.innerHTML = `
-          <img src="${game.thumbnail}" alt="${game.title}">
-          <div class="title">${game.title}</div>
-        `;
-        div.addEventListener('click', () => {
-          iframe.src = game.url;
-          modal.style.display = 'flex';
-        });
-        gamesGrid.appendChild(div);
-      });
-      currentPage++;
-      if (end >= games.length) loading.style.display = 'none';
-      else loading.style.display = 'block';
-    }
-
-    loadGames();
-    window.addEventListener('scroll', () => {
-      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 500) {
-        loadGames();
-      }
-    });
-  });
-
-document.querySelector('.close-modal').onclick = () => {
-  modal.style.display = 'none';
-  iframe.src = '';
-};
-
-
-// games.json (sample)
-[
-  {
-    "title": "Bullet Force",
-    "thumbnail": "https://www.gamepix.com/assets/img/bullet-force.jpg",
-    "url": "https://games.gamepix.com/play/bullet-force"
-  },
-  {
-    "title": "Moto X3M",
-    "thumbnail": "https://www.gamepix.com/assets/img/moto-x3m.jpg",
-    "url": "https://games.gamepix.com/play/moto-x3m"
-  },
-  {
-    "title": "Cut The Rope",
-    "thumbnail": "https://www.gamepix.com/assets/img/cut-the-rope.jpg",
-    "url": "https://games.gamepix.com/play/cut-the-rope"
-  },
-  {
-    "title": "Temple Run 2",
-    "thumbnail": "https://www.gamepix.com/assets/img/temple-run-2.jpg",
-    "url": "https://games.gamepix.com/play/temple-run-2"
-  },
-  {
-    "title": "Stacky Dash",
-    "thumbnail": "https://www.gamepix.com/assets/img/stacky-dash.jpg",
-    "url": "https://games.gamepix.com/play/stacky-dash"
-  }
-]
