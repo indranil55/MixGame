@@ -1,57 +1,108 @@
-// script.js
-const games = [
-    { title: "Car Racing", category: "Racing", url: "https://example.com/game1", img: "https://via.placeholder.com/180x120?text=Car+Racing" },
-    { title: "Puzzle Mania", category: "Puzzle", url: "https://example.com/game2", img: "https://via.placeholder.com/180x120?text=Puzzle+Mania" },
-    { title: "Jungle Adventure", category: "Adventure", url: "https://example.com/game3", img: "https://via.placeholder.com/180x120?text=Jungle+Adventure" },
-    { title: "Football Strike", category: "Sports", url: "https://example.com/game4", img: "https://via.placeholder.com/180x120?text=Football+Strike" },
-    { title: "Zombie Attack", category: "Action", url: "https://example.com/game5", img: "https://via.placeholder.com/180x120?text=Zombie+Attack" },
-];
+// GamePix API Configuration
+const GAMEPIX_API_KEY = 'YOUR_API_KEY'; // Replace with your actual API key
+const GAMEPIX_API_URL = 'https://api.gamepix.com/games';
+let currentPage = 1;
+let isLoading = false;
 
-const grid = document.getElementById('games-grid');
-const modal = document.getElementById('game-modal');
+// DOM Elements
+const gamesGrid = document.getElementById('games-grid');
+const loadingElement = document.getElementById('loading');
+const loadMoreButton = document.getElementById('load-more');
+const gameModal = document.getElementById('game-modal');
 const gameFrame = document.getElementById('game-frame');
 const closeModal = document.querySelector('.close-modal');
-const categoryButtons = document.querySelectorAll('.category-buttons button');
 
-function loadGames(category = "All Games") {
-    grid.innerHTML = '';
-    const filtered = category === "All Games" ? games : games.filter(game => game.category === category);
-    filtered.forEach(game => {
-        const card = document.createElement('div');
-        card.className = 'game-card';
-        card.innerHTML = `
-            <img src="${game.img}" alt="${game.title}">
-            <h3>${game.title}</h3>
-            <button onclick="openGame('${game.url}')">Play</button>
+// Fetch games from GamePix API
+async function fetchGames(page = 1, category = '') {
+    isLoading = true;
+    loadingElement.style.display = 'block';
+    loadMoreButton.style.display = 'none';
+
+    try {
+        const response = await fetch(`${GAMEPIX_API_URL}?key=${GAMEPIX_API_KEY}&page=${page}&limit=12${category ? `&category=${category}` : ''}`);
+        const data = await response.json();
+        
+        if (data.data && data.data.length > 0) {
+            displayGames(data.data);
+            currentPage = page;
+            
+            // Show load more button if there are more games
+            if (data.total > (page * 12)) {
+                loadMoreButton.style.display = 'block';
+            }
+        } else {
+            loadingElement.textContent = 'No more games available.';
+        }
+    } catch (error) {
+        console.error('Error fetching games:', error);
+        loadingElement.textContent = 'Failed to load games. Please try again later.';
+    } finally {
+        isLoading = false;
+        loadingElement.style.display = 'none';
+    }
+}
+
+// Display games in the grid
+function displayGames(games) {
+    games.forEach(game => {
+        const gameCard = document.createElement('div');
+        gameCard.className = 'game-card';
+        gameCard.innerHTML = `
+            <img src="${game.thumbnailUrl || 'https://via.placeholder.com/300x150'}" alt="${game.title}" class="game-thumbnail">
+            <div class="game-info">
+                <h3 class="game-title">${game.title}</h3>
+                <span class="game-category">${game.category || 'General'}</span>
+            </div>
         `;
-        grid.appendChild(card);
+        
+        gameCard.addEventListener('click', () => openGame(game));
+        gamesGrid.appendChild(gameCard);
     });
-    document.getElementById('loading').style.display = 'none';
 }
 
-function openGame(url) {
-    modal.style.display = 'flex';
-    gameFrame.src = url;
+// Open game in modal
+function openGame(game) {
+    gameFrame.src = game.gameUrl;
+    gameModal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
 }
 
-function closeGame() {
-    modal.style.display = 'none';
+// Close modal
+function closeGameModal() {
     gameFrame.src = '';
+    gameModal.style.display = 'none';
+    document.body.style.overflow = 'auto';
 }
 
-closeModal.addEventListener('click', closeGame);
-window.addEventListener('click', e => {
-    if (e.target === modal) closeGame();
+// Event listeners
+closeModal.addEventListener('click', closeGameModal);
+gameModal.addEventListener('click', (e) => {
+    if (e.target === gameModal) {
+        closeGameModal();
+    }
 });
 
-categoryButtons.forEach(button => {
+loadMoreButton.addEventListener('click', () => {
+    if (!isLoading) {
+        fetchGames(currentPage + 1);
+    }
+});
+
+// Category filtering
+document.querySelectorAll('.category-buttons button').forEach(button => {
     button.addEventListener('click', () => {
-        document.querySelector('.category-buttons .active').classList.remove('active');
+        // Update active button
+        document.querySelector('.category-buttons button.active').classList.remove('active');
         button.classList.add('active');
-        loadGames(button.textContent);
+        
+        // Clear current games
+        gamesGrid.innerHTML = '';
+        
+        // Fetch games for selected category
+        const category = button.textContent === 'All Games' ? '' : button.textContent.toLowerCase();
+        fetchGames(1, category);
     });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    loadGames();
-});
+// Initialize
+fetchGames();
