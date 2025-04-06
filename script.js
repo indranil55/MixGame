@@ -1,57 +1,59 @@
-// script.js
 const games = [
-  { title: "Car Racing", category: "Racing", url: "https://example.com/game1", img: "https://via.placeholder.com/180x120?text=Car+Racing" },
-  { title: "Puzzle Mania", category: "Puzzle", url: "https://example.com/game2", img: "https://via.placeholder.com/180x120?text=Puzzle+Mania" },
-  { title: "Jungle Adventure", category: "Adventure", url: "https://example.com/game3", img: "https://via.placeholder.com/180x120?text=Jungle+Adventure" },
-  { title: "Football Strike", category: "Sports", url: "https://example.com/game4", img: "https://via.placeholder.com/180x120?text=Football+Strike" },
-  { title: "Zombie Attack", category: "Action", url: "https://example.com/game5", img: "https://via.placeholder.com/180x120?text=Zombie+Attack" },
+    {
+        title: "Temple Run",
+        category: "Action",
+        thumbnail: "https://via.placeholder.com/200x150?text=Temple+Run",
+        url: "https://html5.gamedistribution.com/rvvASMiH/71b0f09a711a4c848bf6db0c10d118a0/index.html"
+    },
+    {
+        title: "Candy Crush",
+        category: "Puzzle",
+        thumbnail: "https://via.placeholder.com/200x150?text=Candy+Crush",
+        url: "https://html5.gamedistribution.com/rvvASMiH/c0f23092e1864f7f9fb3ed5f9790933a/index.html"
+    }
 ];
 
-const grid = document.getElementById('games-grid');
-const modal = document.getElementById('game-modal');
-const gameFrame = document.getElementById('game-frame');
-const closeModal = document.querySelector('.close-modal');
-const categoryButtons = document.querySelectorAll('.category-buttons button');
-
 function loadGames(category = "All Games") {
-  grid.innerHTML = '';
-  const filtered = category === "All Games" ? games : games.filter(game => game.category === category);
-  filtered.forEach(game => {
-    const card = document.createElement('div');
-    card.className = 'game-card';
-    card.innerHTML = `
-      <img src="${game.img}" alt="${game.title}">
-      <h3>${game.title}</h3>
-      <button onclick="openGame('${game.url}')">Play</button>
-    `;
-    grid.appendChild(card);
-  });
-  document.getElementById('loading').style.display = 'none';
+    const grid = document.getElementById("games-grid");
+    grid.innerHTML = "";
+    const filteredGames = category === "All Games" ? games : games.filter(g => g.category === category);
+
+    filteredGames.forEach(game => {
+        const gameCard = document.createElement("div");
+        gameCard.className = "game-card";
+        gameCard.innerHTML = `
+            <img src="${game.thumbnail}" alt="${game.title}">
+            <h3>${game.title}</h3>
+        `;
+        gameCard.addEventListener("click", () => openGameModal(game.url));
+        grid.appendChild(gameCard);
+    });
+
+    document.getElementById("loading").style.display = "none";
 }
 
-function openGame(url) {
-  modal.style.display = 'flex';
-  gameFrame.src = url;
+function openGameModal(url) {
+    const modal = document.getElementById("game-modal");
+    const iframe = document.getElementById("game-frame");
+    iframe.src = url;
+    modal.style.display = "flex";
 }
 
-function closeGame() {
-  modal.style.display = 'none';
-  gameFrame.src = '';
-}
-
-closeModal.addEventListener('click', closeGame);
-window.addEventListener('click', e => {
-  if (e.target === modal) closeGame();
+document.querySelector(".close-modal").addEventListener("click", () => {
+    const modal = document.getElementById("game-modal");
+    const iframe = document.getElementById("game-frame");
+    iframe.src = "";
+    modal.style.display = "none";
 });
 
-categoryButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    document.querySelector('.category-buttons .active').classList.remove('active');
-    button.classList.add('active');
-    loadGames(button.textContent);
-  });
+document.querySelectorAll(".category-buttons button").forEach(button => {
+    button.addEventListener("click", () => {
+        document.querySelectorAll(".category-buttons button").forEach(b => b.classList.remove("active"));
+        button.classList.add("active");
+        loadGames(button.textContent);
+    });
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-  loadGames();
-});
+window.onload = () => {
+    loadGames();
+};
