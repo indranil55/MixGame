@@ -1,15 +1,13 @@
-let gamesData = [];
-let loadedGames = 0;
-const gamesPerLoad = 20;
+// script.js - Final version for MixGame
 
+let gamesData = [];
 const gameContainer = document.getElementById("gameContainer");
 const topGamesContainer = document.getElementById("topGames");
-const searchBar = document.getElementById("searchBar");
 const categoryFilter = document.getElementById("categoryFilter");
-const loading = document.getElementById("loading");
+const searchInput = document.getElementById("searchInput");
 const modal = document.getElementById("gameModal");
-const gameFrame = document.getElementById("gameFrame");
-const modalClose = document.getElementById("modalClose");
+const modalContent = document.getElementById("modalContent");
+const closeModal = document.getElementById("closeModal");
 
 fetch("games.json")
   .then(res => res.json())
@@ -21,83 +19,54 @@ fetch("games.json")
   });
 
 function renderCategories(data) {
-  const categories = ["All", ...new Set(data.map(game => game.category))];
-  categoryFilter.innerHTML = categories.map(cat => `<button data-category="${cat}">${cat}</button>`).join("");
-}
-
-function renderGames(data, append = false) {
-  const filteredGames = filterGames(data);
-  const gamesToRender = filteredGames.slice(loadedGames, loadedGames + gamesPerLoad);
-  if (!append) gameContainer.innerHTML = "";
-
-  gamesToRender.forEach(game => {
-    const gameCard = document.createElement("div");
-    gameCard.className = "game-card";
-    gameCard.innerHTML = `
-      <img src="${game.thumbnail}" alt="${game.title}" loading="lazy" />
-      <p>${game.title}</p>
-    `;
-    gameCard.addEventListener("click", () => openGameModal(game.url));
-    gameContainer.appendChild(gameCard);
-  });
-
-  loadedGames += gamesPerLoad;
-  loading.style.display = loadedGames < filteredGames.length ? "block" : "none";
+  const categories = [...new Set(data.map(game => game.category))];
+  categoryFilter.innerHTML = `<option value="all">All</option>` +
+    categories.map(cat => `<option value="${cat}">${cat}</option>`).join("");
 }
 
 function renderTopGames(data) {
   const topGames = data.filter(game => game.top);
-  topGamesContainer.innerHTML = topGames.map(game => `
-    <div class="game-card" onclick="openGameModal('${game.url}')">
-      <img src="${game.thumbnail}" alt="${game.title}" loading="lazy" />
-      <p>${game.title}</p>
+  topGamesContainer.innerHTML = topGames.map(createGameCard).join("");
+}
+
+function renderGames(data) {
+  gameContainer.innerHTML = data.map(createGameCard).join("");
+}
+
+function createGameCard(game) {
+  return `
+    <div class="game-card" onclick="openModal('${game.url}')">
+      <img src="${game.thumbnail}" alt="${game.title}" loading="lazy">
+      <h3>${game.title}</h3>
     </div>
-  `).join("");
+  `;
 }
 
-function filterGames(data) {
-  const searchTerm = searchBar.value.toLowerCase();
-  const selectedCategory = document.querySelector("#categoryFilter .active")?.dataset.category || "All";
-  return data.filter(game => {
-    const matchTitle = game.title.toLowerCase().includes(searchTerm);
-    const matchCategory = selectedCategory === "All" || game.category === selectedCategory;
-    return matchTitle && matchCategory;
-  });
+function openModal(url) {
+  modal.style.display = "flex";
+  modalContent.innerHTML = `<iframe src="${url}" frameborder="0" allowfullscreen></iframe>`;
 }
 
-categoryFilter.addEventListener("click", e => {
-  if (e.target.tagName === "BUTTON") {
-    document.querySelectorAll("#categoryFilter button").forEach(btn => btn.classList.remove("active"));
-    e.target.classList.add("active");
-    loadedGames = 0;
-    renderGames(gamesData);
-  }
-});
-
-searchBar.addEventListener("input", () => {
-  loadedGames = 0;
-  renderGames(gamesData);
-});
-
-function openGameModal(url) {
-  modal.style.display = "block";
-  gameFrame.src = url;
-}
-
-modalClose.addEventListener("click", () => {
+closeModal.onclick = () => {
   modal.style.display = "none";
-  gameFrame.src = "";
-});
+  modalContent.innerHTML = "";
+};
 
-window.addEventListener("click", e => {
-  if (e.target === modal) {
+window.onclick = (event) => {
+  if (event.target == modal) {
     modal.style.display = "none";
-    gameFrame.src = "";
+    modalContent.innerHTML = "";
   }
+};
+
+categoryFilter.addEventListener("change", () => {
+  const selected = categoryFilter.value;
+  const filtered = selected === "all" ? gamesData : gamesData.filter(game => game.category === selected);
+  renderGames(filtered);
 });
 
-window.addEventListener("scroll", () => {
-  if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 100) {
-    renderGames(gamesData, true);
-  }
+searchInput.addEventListener("input", () => {
+  const keyword = searchInput.value.toLowerCase();
+  const filtered = gamesData.filter(game => game.title.toLowerCase().includes(keyword));
+  renderGames(filtered);
 });
