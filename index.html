@@ -3,50 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MixGameZone 🎮</title>
+  <title>MixGameZone</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header>
-    <h1>🎮 MixGameZone</h1>
+    <h1>MixGameZone</h1>
     <p class="tagline">Play Instantly – No Download Needed!</p>
-    <input type="text" id="searchBar" placeholder="🔍 Search games..." />
-    <div id="categoryFilter">
-      <button data-category="All">All</button>
-      <button data-category="Action">Action</button>
-      <button data-category="Racing">Racing</button>
-      <button data-category="Brain">Brain</button>
-      <button data-category="Shooting">Shooting</button>
-      <button data-category="Kids">Kids</button>
-      <button data-category="Strategy">Strategy</button>
-      <button data-category="Puzzle">Puzzle</button>
-      <button data-category="Sports">Sports</button>
-      <button data-category="Adventure">Adventure</button>
-    </div>
+    <input type="text" id="searchInput" placeholder="🔍 Search games..." />
+    <div id="categoryFilter"></div>
   </header>
 
   <main>
-    <section id="top-games">
+    <section>
       <h2>🌟 Top Games</h2>
-      <div class="games-grid" id="topGames"></div>
+      <div id="topGames" class="game-grid"></div>
     </section>
 
-    <section id="all-games">
+    <section>
       <h2>🎮 All Games</h2>
-      <div class="games-grid" id="gameContainer"></div>
-      <div id="loading">Loading more games...</div>
+      <div id="gameContainer" class="game-grid"></div>
+      <p id="loading">Loading more games...</p>
     </section>
   </main>
 
   <div id="gameModal" class="modal">
-    <div class="modal-content">
-      <span id="modalClose" class="close">&times;</span>
-      <iframe id="gameFrame" frameborder="0" allowfullscreen></iframe>
-    </div>
+    <span class="close">×</span>
+    <iframe id="gameFrame" src="" frameborder="0" allowfullscreen></iframe>
   </div>
 
   <footer>
-    <p>© 2025 MixGameZone – All rights reserved.</p>
+    <p>&copy; 2025 MixGameZone – All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
