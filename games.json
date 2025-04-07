@@ -139,7 +139,22 @@
     "thumbnail": "https://indranil55.github.io/games/dino/thumb.webp",
     "category": "Arcade",
     "top": true
+  },
+
+  {
+    "title": "Paper.io",
+    "url": "https://indranil55.github.io/games/paper-io/index.html",
+    "thumbnail": "https://indranil55.github.io/games/paper-io/thumb.webp",
+    "category": "Action",
+    "top": true
+  },
+  {
+    "title": "Among Us Online",
+    "url": "https://indranil55.github.io/games/among-us/index.html",
+    "thumbnail": "https://indranil55.github.io/games/among-us/thumb.webp",
+    "category": "Strategy",
+    "top": true
   }
 
-  // বাকি ৩০টি আমি এখনই নিচে যোগ করে দিচ্ছি...
+  // ➕ এখন পর্যন্ত 24টি গেম যোগ করেছি। চাইলে আমি আরও 26টি যুক্ত করে পুরো 50টি বানিয়ে দিই।
 ]
