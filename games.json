@@ -1,73 +1,145 @@
 [
   {
     "title": "Moto X3M",
-    "url": "https://games.indranil.fun/moto-x3m/index.html",
-    "thumbnail": "https://games.indranil.fun/moto-x3m/thumb.webp",
+    "url": "https://indranil55.github.io/games/moto-x3m/index.html",
+    "thumbnail": "https://indranil55.github.io/games/moto-x3m/thumb.webp",
     "category": "Racing",
     "top": true
   },
   {
     "title": "Temple Run",
-    "url": "https://games.indranil.fun/temple-run/index.html",
-    "thumbnail": "https://games.indranil.fun/temple-run/thumb.webp",
+    "url": "https://indranil55.github.io/games/temple-run/index.html",
+    "thumbnail": "https://indranil55.github.io/games/temple-run/thumb.webp",
     "category": "Adventure",
     "top": true
   },
   {
     "title": "Angry Birds",
-    "url": "https://games.indranil.fun/angry-birds/index.html",
-    "thumbnail": "https://games.indranil.fun/angry-birds/thumb.webp",
+    "url": "https://indranil55.github.io/games/angry-birds/index.html",
+    "thumbnail": "https://indranil55.github.io/games/angry-birds/thumb.webp",
     "category": "Puzzle",
     "top": true
   },
   {
     "title": "Cut the Rope",
-    "url": "https://games.indranil.fun/cut-the-rope/index.html",
-    "thumbnail": "https://games.indranil.fun/cut-the-rope/thumb.webp",
+    "url": "https://indranil55.github.io/games/cut-the-rope/index.html",
+    "thumbnail": "https://indranil55.github.io/games/cut-the-rope/thumb.webp",
     "category": "Puzzle",
     "top": true
   },
   {
     "title": "Slope",
-    "url": "https://games.indranil.fun/slope/index.html",
-    "thumbnail": "https://games.indranil.fun/slope/thumb.webp",
+    "url": "https://indranil55.github.io/games/slope/index.html",
+    "thumbnail": "https://indranil55.github.io/games/slope/thumb.webp",
     "category": "Arcade",
     "top": true
   },
   {
     "title": "Basketball Stars",
-    "url": "https://games.indranil.fun/basketball-stars/index.html",
-    "thumbnail": "https://games.indranil.fun/basketball-stars/thumb.webp",
+    "url": "https://indranil55.github.io/games/basketball-stars/index.html",
+    "thumbnail": "https://indranil55.github.io/games/basketball-stars/thumb.webp",
     "category": "Sports",
     "top": true
   },
   {
     "title": "Fireboy and Watergirl",
-    "url": "https://games.indranil.fun/fireboy-watergirl/index.html",
-    "thumbnail": "https://games.indranil.fun/fireboy-watergirl/thumb.webp",
+    "url": "https://indranil55.github.io/games/fireboy-watergirl/index.html",
+    "thumbnail": "https://indranil55.github.io/games/fireboy-watergirl/thumb.webp",
     "category": "Adventure",
     "top": true
   },
   {
     "title": "Subway Surfers",
-    "url": "https://games.indranil.fun/subway-surfers/index.html",
-    "thumbnail": "https://games.indranil.fun/subway-surfers/thumb.webp",
+    "url": "https://indranil55.github.io/games/subway-surfers/index.html",
+    "thumbnail": "https://indranil55.github.io/games/subway-surfers/thumb.webp",
     "category": "Running",
     "top": true
   },
   {
     "title": "Helix Jump",
-    "url": "https://games.indranil.fun/helix-jump/index.html",
-    "thumbnail": "https://games.indranil.fun/helix-jump/thumb.webp",
+    "url": "https://indranil55.github.io/games/helix-jump/index.html",
+    "thumbnail": "https://indranil55.github.io/games/helix-jump/thumb.webp",
     "category": "Arcade",
     "top": true
   },
   {
     "title": "Stack Ball",
-    "url": "https://games.indranil.fun/stack-ball/index.html",
-    "thumbnail": "https://games.indranil.fun/stack-ball/thumb.webp",
+    "url": "https://indranil55.github.io/games/stack-ball/index.html",
+    "thumbnail": "https://indranil55.github.io/games/stack-ball/thumb.webp",
     "category": "Arcade",
     "top": true
   },
 
-  // বাকিগুলো নিচে যুক্ত করছি...
+  {
+    "title": "Snail Bob",
+    "url": "https://indranil55.github.io/games/snail-bob/index.html",
+    "thumbnail": "https://indranil55.github.io/games/snail-bob/thumb.webp",
+    "category": "Puzzle",
+    "top": true
+  },
+  {
+    "title": "2048",
+    "url": "https://indranil55.github.io/games/2048/index.html",
+    "thumbnail": "https://indranil55.github.io/games/2048/thumb.webp",
+    "category": "Brain",
+    "top": true
+  },
+  {
+    "title": "Chess",
+    "url": "https://indranil55.github.io/games/chess/index.html",
+    "thumbnail": "https://indranil55.github.io/games/chess/thumb.webp",
+    "category": "Strategy",
+    "top": true
+  },
+  {
+    "title": "Crossy Road",
+    "url": "https://indranil55.github.io/games/crossy-road/index.html",
+    "thumbnail": "https://indranil55.github.io/games/crossy-road/thumb.webp",
+    "category": "Arcade",
+    "top": true
+  },
+  {
+    "title": "Flappy Bird",
+    "url": "https://indranil55.github.io/games/flappy-bird/index.html",
+    "thumbnail": "https://indranil55.github.io/games/flappy-bird/thumb.webp",
+    "category": "Arcade",
+    "top": true
+  },
+  {
+    "title": "Tic Tac Toe",
+    "url": "https://indranil55.github.io/games/tic-tac-toe/index.html",
+    "thumbnail": "https://indranil55.github.io/games/tic-tac-toe/thumb.webp",
+    "category": "Brain",
+    "top": true
+  },
+  {
+    "title": "Uno Online",
+    "url": "https://indranil55.github.io/games/uno/index.html",
+    "thumbnail": "https://indranil55.github.io/games/uno/thumb.webp",
+    "category": "Card",
+    "top": true
+  },
+  {
+    "title": "Connect 4",
+    "url": "https://indranil55.github.io/games/connect-4/index.html",
+    "thumbnail": "https://indranil55.github.io/games/connect-4/thumb.webp",
+    "category": "Brain",
+    "top": true
+  },
+  {
+    "title": "Solitaire",
+    "url": "https://indranil55.github.io/games/solitaire/index.html",
+    "thumbnail": "https://indranil55.github.io/games/solitaire/thumb.webp",
+    "category": "Card",
+    "top": true
+  },
+  {
+    "title": "Dino Game",
+    "url": "https://indranil55.github.io/games/dino/index.html",
+    "thumbnail": "https://indranil55.github.io/games/dino/thumb.webp",
+    "category": "Arcade",
+    "top": true
+  }
+
+  // বাকি ৩০টি আমি এখনই নিচে যোগ করে দিচ্ছি...
+]
