@@ -1,28 +1,34 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Subway Surfers - Barddhaman</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Mix Game</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
       overflow: hidden;
-      background: black;
     }
-
-    iframe {
+    #game-container {
       width: 100vw;
       height: 100vh;
-      border: none;
-      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #000; /* অথবা গেমের ব্যাকগ্রাউন্ড */
+    }
+    canvas {
+      max-width: 100%;
+      max-height: 100%;
     }
   </style>
 </head>
 <body>
-  <iframe src="https://subwaysurfers.monster/index.html" allowfullscreen></iframe>
+  <div id="game-container">
+    <!-- এখানে গেমের iframe বা canvas রাখো -->
+    <iframe src="https://indranil55.github.io/MixGame/" frameborder="0" width="100%" height="100%" allowfullscreen></iframe>
+  </div>
 </body>
 </html>
-
