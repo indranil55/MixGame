@@ -1,27 +1,106 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>Subway Surfers - Barddhaman</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Mix Game</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
+      width: 100%;
       overflow: hidden;
-      background: black;
+      background: #fff;
+      font-family: sans-serif;
     }
-
+    #game-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 1;
+    }
     iframe {
-      width: 100vw;
-      height: 100vh;
+      width: 100%;
+      height: 100%;
       border: none;
-      display: block;
+    }
+    #ad-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      display: none;
+      z-index: 9999;
+      color: white;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    #ad-container h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    #ad-container p {
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+    .ad-content {
+      max-width: 90%;
+      background: #111;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px #fff5;
+    }
+    .close-btn {
+      background: #ff4d4d;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
-  <iframe src="https://subwaysurfers.monster/index.html" allowfullscreen></iframe>
+  <div id="game-container">
+    <iframe
+      src="https://indranil55.github.io/MixGame/"
+      allowfullscreen
+      allow="autoplay"
+      loading="eager"
+    ></iframe>
+  </div>
+
+  <!-- AD Container -->
+  <div id="ad-container" class="ad-content-wrapper">
+    <div class="ad-content">
+      <h2>Sponsored Ad</h2>
+      <p>গেম খেলায় মজা? এখন দেখো একটা স্পেশাল অফার!</p>
+
+      <!-- এখানে Custom Ad বসাও — ভিডিও, ছবি, কিছুই হোক -->
+      <iframe width="300" height="170" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+      <button class="close-btn" onclick="closeAd()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    // 3 মিনিট পর Ad দেখাও
+    setTimeout(() => {
+      document.getElementById('ad-container').style.display = 'flex';
+    }, 180000); // 180000 মিলিসেকেন্ড = 3 মিনিট
+
+    function closeAd() {
+      document.getElementById('ad-container').style.display = 'none';
+    }
+  </script>
 </body>
 </html>
