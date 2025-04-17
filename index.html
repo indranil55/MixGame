@@ -53,15 +53,15 @@
 
   <div id="ad-banner">
     <h2>📢 বিজ্ঞাপন</h2>
-    <p>৫ মিনিট বিজ্ঞাপন দেখলেই আপনি আয় করবেন ৳300!</p>
-    <div id="timer">সময় বাকি: 300 সেকেন্ড</div>
+    <p>৫ সেকেন্ড বিজ্ঞাপন দেখলেই আপনি আয় করবেন 300!</p>
+    <div id="timer">5 সেকেন্ড</div>
     <div id="earn-msg"></div>
   </div>
 
   <iframe src="https://subwaysurfers.monster/index.html" allowfullscreen></iframe>
 
   <script>
-    let seconds = 300;
+    let seconds = 5;
     const timer = document.getElementById('timer');
     const earnMsg = document.getElementById('earn-msg');
     const banner = document.getElementById('ad-banner');
@@ -72,10 +72,10 @@
 
       if (seconds <= 0) {
         clearInterval(countdown);
-        earnMsg.innerText = "✅ আপনি আয় করেছেন ৳300!";
+        earnMsg.innerText = "✅ আপনি আয় করেছেন 300!";
         setTimeout(() => {
           banner.style.display = 'none';
-        }, 5000);
+        }, 5000); // ৫ সেকেন্ড পর বিজ্ঞাপন লুকিয়ে যাবে
       }
     }, 1000);
   </script>
