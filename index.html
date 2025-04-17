@@ -23,37 +23,39 @@
 
     #ad-banner {
       position: absolute;
-      top: 20px;
+      top: 10px;
       left: 50%;
       transform: translateX(-50%);
       background: white;
       color: black;
-      padding: 20px;
+      padding: 10px 15px;
       border: 2px solid #333;
       z-index: 9999;
       text-align: center;
-      width: 320px;
-      border-radius: 10px;
+      width: 220px;
+      border-radius: 8px;
+      font-size: 14px;
     }
 
     #timer {
-      font-size: 18px;
-      margin-top: 10px;
+      font-size: 14px;
+      margin-top: 5px;
       color: green;
     }
 
     #earn-msg {
-      margin-top: 10px;
+      margin-top: 5px;
       font-weight: bold;
       color: blue;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
 
   <div id="ad-banner">
-    <h2>📢 বিজ্ঞাপন</h2>
-    <p>৫ সেকেন্ড বিজ্ঞাপন দেখলেই আপনি আয় করবেন 300!</p>
+    <strong>📢 বিজ্ঞাপন</strong>
+    <p>৫ সেকেন্ড দেখলেই আয় হবে 300!</p>
     <div id="timer">5 সেকেন্ড</div>
     <div id="earn-msg"></div>
   </div>
@@ -68,14 +70,14 @@
 
     const countdown = setInterval(() => {
       seconds--;
-      timer.innerText = "সময় বাকি: " + seconds + " সেকেন্ড";
+      timer.innerText = "সময় বাকি: " + off + " off";
 
       if (seconds <= 0) {
         clearInterval(countdown);
         earnMsg.innerText = "✅ আপনি আয় করেছেন 300!";
         setTimeout(() => {
           banner.style.display = 'none';
-        }, 5000); // ৫ সেকেন্ড পর বিজ্ঞাপন লুকিয়ে যাবে
+        }, 5000);
       }
     }, 1000);
   </script>
