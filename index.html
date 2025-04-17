@@ -11,6 +11,7 @@
       height: 100%;
       overflow: hidden;
       background: black;
+      font-family: sans-serif;
     }
 
     iframe {
@@ -19,9 +20,65 @@
       border: none;
       display: block;
     }
+
+    #ad-banner {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: white;
+      color: black;
+      padding: 20px;
+      border: 2px solid #333;
+      z-index: 9999;
+      text-align: center;
+      width: 320px;
+      border-radius: 10px;
+    }
+
+    #timer {
+      font-size: 18px;
+      margin-top: 10px;
+      color: green;
+    }
+
+    #earn-msg {
+      margin-top: 10px;
+      font-weight: bold;
+      color: blue;
+    }
   </style>
 </head>
 <body>
+
+  <div id="ad-banner">
+    <h2>📢 বিজ্ঞাপন</h2>
+    <p>৫ মিনিট বিজ্ঞাপন দেখলেই আপনি আয় করবেন ৳300!</p>
+    <div id="timer">সময় বাকি: 300 সেকেন্ড</div>
+    <div id="earn-msg"></div>
+  </div>
+
   <iframe src="https://subwaysurfers.monster/index.html" allowfullscreen></iframe>
+
+  <script>
+    let seconds = 300;
+    const timer = document.getElementById('timer');
+    const earnMsg = document.getElementById('earn-msg');
+    const banner = document.getElementById('ad-banner');
+
+    const countdown = setInterval(() => {
+      seconds--;
+      timer.innerText = "সময় বাকি: " + seconds + " সেকেন্ড";
+
+      if (seconds <= 0) {
+        clearInterval(countdown);
+        earnMsg.innerText = "✅ আপনি আয় করেছেন ৳300!";
+        setTimeout(() => {
+          banner.style.display = 'none';
+        }, 5000);
+      }
+    }, 1000);
+  </script>
+
 </body>
 </html>
